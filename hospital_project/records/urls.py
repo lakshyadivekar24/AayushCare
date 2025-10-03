@@ -18,6 +18,8 @@ urlpatterns = [
     # This URL allows editing a condition to add an end date
     path('condition/edit/<int:condition_id>/', views.edit_condition_view, name='edit_condition'),
     
+    path('api/chat/', views.chat_api_view, name='chat_api'),
+    
     # Home page URL
     path('', views.home_view, name='home'),
 ]
