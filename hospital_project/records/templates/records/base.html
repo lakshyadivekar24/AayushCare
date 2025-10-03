@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital System</title>
+    <style> body { font-family: sans-serif; padding: 20px; } </style>
+</head>
+<body>
+    <h1>AayushCare</h1>
+    {% if request.session.user_id %}
+        <a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+    <hr>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

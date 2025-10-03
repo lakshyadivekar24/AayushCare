@@ -1,0 +1,135 @@
+{% extends 'records/base.html' %}
+{% block content %}
+    <h2>Welcome, {{ patient.name }}!</h2>
+
+    <hr>
+    <h3>Aapki Health Conditions</h3>
+    <table border="1" cellpadding="5" style="width:100%;">
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Shuru Hone ki Date (Start Date)</th>
+                <th>Status / Khatm Hone ki Date (End Date)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for condition in conditions %}
+            <tr>
+                <td>{{ condition.condition_name }}</td>
+                <td>{{ condition.start_date }}</td>
+                <td>
+                    {% if condition.end_date %}
+                        Completed on {{ condition.end_date }}
+                    {% else %}
+                        <strong style="color:green;">Active</strong>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3">Aapki koi health condition record nahi hai.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <hr>
+    <h3>Aapki Medical History (Doctor Visits)</h3>
+    {% for record in records %}
+        <div>
+            <p><strong>Date:</strong> {{ record.record_date }}</p>
+            <p><strong>Doctor:</strong> {{ record.doctor.name }}</p>
+            <p><strong>Symptoms:</strong> {{ record.symptoms }}</p>
+            <p><strong>Diagnosis:</strong> {{ record.diagnosis }}</p>
+
+            {% if record.report_file %}
+                <p><strong>Report:</strong> <a href="{{ record.report_file.url }}" target="_blank">View/Download Report</a></p>
+            {% endif %}
+            <hr>
+        </div>
+    {% empty %}
+        <p>Aapka koi medical record (doctor visit) nahi mila.</p>
+    {% endfor %}
+
+    <hr>
+    <h3>AI Health Assistant</h3>
+    <div id="chat-window" style="height: 300px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; margin-bottom: 10px; background-color: #f9f9f9;">
+        <p><strong>AI:</strong> Hello {{ patient.name }}, main aapki kaise madad kar sakta hoon?</p>
+    </div>
+    <input type="text" id="chat-input" placeholder="Apna sawaal yahan poochein..." style="width: 80%; padding: 8px;">
+    <button id="send-btn" style="padding: 8px;">Send</button>
+
+    <script>
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Django ke CSRF token ko get karne ka function
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            // User ka message chat window me dikhayein
+            chatWindow.innerHTML += `<p style="text-align: right; margin: 5px; padding: 8px; background-color: #dcf8c6; border-radius: 10px;"><strong>Aap:</strong> ${message}</p>`;
+            chatInput.value = '';
+            chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to bottom
+
+            // Loading message dikhayein
+            chatWindow.innerHTML += `<p id="loading-msg" style="margin: 5px; padding: 8px; background-color: #ececec; border-radius: 10px;"><strong>AI:</strong> Soch raha hoon...</p>`;
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            try {
+                // Django API ko request bhejein
+                const response = await fetch('/api/chat/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken // CSRF token zaroori hai
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                const aiReply = data.reply;
+
+                // Loading message ko asli jawaab se replace karein
+                const loadingP = document.getElementById("loading-msg");
+                loadingP.innerHTML = `<strong>AI:</strong> ${aiReply}`;
+                loadingP.removeAttribute("id"); // ID hata dein taaki agli baar naya loading message ban sake
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+
+            } catch (error) {
+                console.error('Error:', error);
+                const loadingP = document.getElementById("loading-msg");
+                loadingP.innerHTML = `<strong>AI:</strong> Sorry, ek error aa gaya hai.`;
+                loadingP.removeAttribute("id");
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+        }
+
+        sendBtn.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+{% endblock %}

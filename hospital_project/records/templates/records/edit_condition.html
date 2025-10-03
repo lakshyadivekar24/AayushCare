@@ -1,0 +1,15 @@
+{% extends 'records/base.html' %}
+{% block content %}
+    <h2>Edit Condition</h2>
+    <p><strong>Patient:</strong> {{ condition.patient.name }}</p>
+    <p><strong>Condition:</strong> {{ condition.condition_name }}</p>
+    <p><strong>Start Date:</strong> {{ condition.start_date }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="end_date">Mark as Completed on (End Date):</label><br>
+        <input type="date" id="end_date" name="end_date" required>
+        <br><br>
+        <button type="submit">Save End Date</button>
+    </form>
+{% endblock %}

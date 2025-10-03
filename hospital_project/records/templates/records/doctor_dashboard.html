@@ -1,0 +1,80 @@
+{% extends 'records/base.html' %}
+{% block content %}
+    <h2>Welcome, {{ doctor.name }}!</h2>
+
+    <hr>
+    <h3>Nayi Condition/Bimari Add Karein</h3>
+    <form action="{% url 'add_condition' %}" method="post">
+        {% csrf_token %}
+        Patient: 
+        <select name="patient" required>
+            {% for p in patients %}
+                <option value="{{ p.id }}">{{ p.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        Condition ka Naam (e.g., Pregnancy, Diabetes): <input type="text" name="condition_name" required><br><br>
+        Shuru Hone ki Date: <input type="date" name="start_date" required><br><br>
+        <button type="submit">Condition Add Karein</button>
+    </form>
+    
+    <hr>
+    <h3>Sabhi Patients ki Active Conditions</h3>
+    <table border="1" cellpadding="5" style="width:100%;">
+        <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Condition</th>
+                <th>Start Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for condition in active_conditions %}
+            <tr>
+                <td>{{ condition.patient.name }}</td>
+                <td>{{ condition.condition_name }}</td>
+                <td>{{ condition.start_date }}</td>
+                <td>
+                    <a href="{% url 'edit_condition' condition.id %}">
+                        <button>Edit / Complete</button>
+                    </a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">Koi active condition nahi hai.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <hr>
+    <h3>Naya Medical Record Add Karein</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        Patient: 
+        <select name="patient" required>
+            {% for p in patients %}
+                <option value="{{ p.id }}">{{ p.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        Symptoms: <textarea name="symptoms"></textarea><br><br>
+        Diagnosis: <textarea name="diagnosis"></textarea><br><br>
+        Prescription: <textarea name="prescription"></textarea><br><br>
+        Dose: <input type="text" name="dose"><br><br>
+        Health Report: <input type="file" name="report_file"><br><br>
+        <button type="submit">Record Save Karein</button>
+    </form>
+
+    <hr>
+    <h3>Aapke Dwara Banaye Gaye Records</h3>
+    {% for record in records %}
+        <div>
+            <p><strong>Date:</strong> {{ record.record_date }}</p>
+            <p><strong>Patient:</strong> {{ record.patient.name }}</p>
+            <p><strong>Diagnosis:</strong> {{ record.diagnosis }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>Aapne abhi tak koi record nahi banaya.</p>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'records/base.html' %}
+{% block content %}
+    <h2>Doctor Signup</h2>
+    <form method="post">
+        {% csrf_token %}
+        Naam: <input type="text" name="name" required><br><br>
+        Specialty: <input type="text" name="specialty" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        <button type="submit">Register as Doctor</button>
+    </form>
+{% endblock %}

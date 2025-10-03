@@ -1,0 +1,13 @@
+{% extends 'records/base.html' %}
+{% block content %}
+    <h2>Patient Signup</h2>
+    <form method="post">
+        {% csrf_token %}
+        Naam: <input type="text" name="name" required><br><br>
+        Aadhar: <input type="text" name="aadhar" required><br><br>
+        DOB (YYYY-MM-DD): <input type="date" name="dob" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}
