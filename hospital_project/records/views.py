@@ -261,32 +261,25 @@ def chat_api_view(request):
         model = genai.GenerativeModel('models/gemini-pro-latest')
 
         prompt = f"""
-                You are a helpful medical AI assistant for 'AayushCare'.
-                Your knowledge is strictly limited to the patient data and the 'Safe Medicine List' provided below.
+        You are a helpful medical AI assistant for 'AayushCare'.
+        Your knowledge is strictly limited to the patient data provided below.
 
-                --- SAFE MEDICINE LIST START ---
-                - Headache (Sar Dard): Paracetamol (if no liver disease), Ibuprofen (if no stomach issues or kidney disease)
-                - Common Cold (Sardi/Zukam): Cetirizine
-                - Acidity (Gas): Antacid Gel
-                - General Body Pain: Paracetamol
-                --- SAFE MEDICINE LIST END ---
+        You must differentiate between two types of questions from the user:
+        1. Factual History Questions: Questions about their past records, dates, doctors, diagnoses. (e.g., "Who was my doctor?", "What was my diagnosis in September?")
+        2. Medical Advice Questions: Questions about current symptoms or what medicine to take now. (e.g., "I have a headache, what should I do?")
 
-                --- PATIENT'S DATA START ---
-                {history_text}
-                --- PATIENT'S DATA END ---
+        Your task:
+        - If the user asks a Factual History Question, answer it directly and concisely from the data provided. **DO NOT** add a doctor consultation warning to these factual answers.
+        - If the user asks a Medical Advice Question, you can provide a simple, safe suggestion. You **MUST** end all advice-related answers with the exact phrase: "Lekin, koi bhi salah manne se pehle ya dawai lene se pehle, ek asli doctor se zaroor poochein."
 
-                PATIENT'S QUESTION: "{user_message}"
+        --- PATIENT'S DATA START ---
+        {history_text}
+        --- PATIENT'S DATA END ---
 
-                Your task:
-                1.  Analyze the patient's question and their symptoms.
-                2.  Check the patient's 'Active Conditions' from their data.
-                3.  Look up the symptom in the 'Safe Medicine List'.
-                4.  **CRITICAL:** Cross-check if the suggested medicine is safe considering the patient's 'Active Conditions'. For example, if a patient has a known allergy to a drug, DO NOT suggest it.
-                5.  If a safe medicine is found in the list, you can suggest it.
-                6.  **ALWAYS, without fail, end your response by advising the user to consult a real doctor before taking any medication.**
+        PATIENT'S QUESTION: "{user_message}"
 
-                ASSISTANT'S RESPONSE (in Hinglish):
-                """
+        ASSISTANT'S RESPONSE (in Hinglish):
+        """
 
         response = model.generate_content(prompt)
         ai_response = response.text
