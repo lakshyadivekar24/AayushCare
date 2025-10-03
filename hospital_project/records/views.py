@@ -235,7 +235,7 @@ def chat_api_view(request):
 
     # Step C: Sirf uss logged-in patient ka data database se nikalein
     patient = Patient.objects.get(id=request.session['user_id'])
-    records = MedicalRecord.objects.filter(patient=patient).order_by('-record_date')
+    records = MedicalRecord.objects.filter(patient=patient).select_related('doctor').order_by('-record_date')
     conditions = PatientCondition.objects.filter(patient=patient)
 
     # Step D: AI ke liye poora context (history) banayein
@@ -251,30 +251,42 @@ def chat_api_view(request):
     history_text += "\nPast Medical Records:\n"
     if records:
         for rec in records:
-            history_text += f"- Date: {rec.record_date}, Symptoms: {rec.symptoms}, Diagnosis: {rec.diagnosis}\n"
+            history_text += f"- Date: {rec.record_date}, Doctor: {rec.doctor.name}, Symptoms: {rec.symptoms}, Diagnosis: {rec.diagnosis}\n"
     else:
         history_text += "- Koi purana medical record nahi hai.\n"
         
     # Step E: Gemini API ko Configure aur Call Karein
     try:
         genai.configure(api_key=settings.GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('models/gemini-pro-latest')
 
         prompt = f"""
-        You are a helpful medical AI assistant for a system named 'AayushCare'.
-        Your knowledge is strictly limited to the patient data provided below. Do not use any external medical knowledge.
-        Your primary goal is to answer the patient's questions based on their history or provide simple, safe suggestions for very minor issues (like headache, common cold).
-        For any serious issue or if you are unsure, you MUST advise the user to consult a real doctor immediately.
-        Keep your answers short, simple, and in Hinglish.
+                You are a helpful medical AI assistant for 'AayushCare'.
+                Your knowledge is strictly limited to the patient data and the 'Safe Medicine List' provided below.
 
-        --- PATIENT'S DATA START ---
-        {history_text}
-        --- PATIENT'S DATA END ---
+                --- SAFE MEDICINE LIST START ---
+                - Headache (Sar Dard): Paracetamol (if no liver disease), Ibuprofen (if no stomach issues or kidney disease)
+                - Common Cold (Sardi/Zukam): Cetirizine
+                - Acidity (Gas): Antacid Gel
+                - General Body Pain: Paracetamol
+                --- SAFE MEDICINE LIST END ---
 
-        PATIENT'S QUESTION: "{user_message}"
+                --- PATIENT'S DATA START ---
+                {history_text}
+                --- PATIENT'S DATA END ---
 
-        ASSISTANT'S RESPONSE (in Hinglish):
-        """
+                PATIENT'S QUESTION: "{user_message}"
+
+                Your task:
+                1.  Analyze the patient's question and their symptoms.
+                2.  Check the patient's 'Active Conditions' from their data.
+                3.  Look up the symptom in the 'Safe Medicine List'.
+                4.  **CRITICAL:** Cross-check if the suggested medicine is safe considering the patient's 'Active Conditions'. For example, if a patient has a known allergy to a drug, DO NOT suggest it.
+                5.  If a safe medicine is found in the list, you can suggest it.
+                6.  **ALWAYS, without fail, end your response by advising the user to consult a real doctor before taking any medication.**
+
+                ASSISTANT'S RESPONSE (in Hinglish):
+                """
 
         response = model.generate_content(prompt)
         ai_response = response.text
