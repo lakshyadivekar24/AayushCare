@@ -1,0 +1,625 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-05 09:56+0530\n"
+"PO-Revision-Date: 2025-10-05 12:10+0530\n"
+"Last-Translator: FULL NAME EMAIL@ADDRESS\n"
+"Language-Team: Malayalam LL@li.org\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hospital_project/settings.py:45
+msgid "English"
+msgstr "ഇംഗ്ലീഷ്"
+
+#: hospital_project/settings.py:46
+msgid "Hindi"
+msgstr "ഹിന്ദി"
+
+#: hospital_project/settings.py:47
+msgid "Marathi"
+msgstr "മറാത്തി"
+
+#: hospital_project/settings.py:48
+msgid "Gujarati"
+msgstr "ഗുജറാത്തി"
+
+#: hospital_project/settings.py:49
+msgid "Bengali"
+msgstr "ബംഗാളി"
+
+#: hospital_project/settings.py:50
+msgid "Tamil"
+msgstr "തമിഴ്"
+
+#: hospital_project/settings.py:51
+msgid "Telugu"
+msgstr "തെലുങ്ക്"
+
+#: hospital_project/settings.py:52
+msgid "Kannada"
+msgstr "കന്നഡ"
+
+#: hospital_project/settings.py:53
+msgid "Malayalam"
+msgstr "മലയാളം"
+
+#: hospital_project/settings.py:54
+msgid "Odia"
+msgstr "ഒഡിയ"
+
+#: hospital_project/settings.py:55
+msgid "Urdu"
+msgstr "ഉർദു"
+
+#: records/templates/records/add_record_form.html:7
+msgid "Add New Medical Record"
+msgstr "പുതിയ മെഡിക്കൽ റെക്കോർഡ് ചേർക്കുക"
+
+#: records/templates/records/add_record_form.html:9
+#, python-format
+msgid "You are adding a new record for: <strong>%(patient.name)s</strong>"
+msgstr "നിങ്ങൾ ഇയാൾക്കായി ഒരു പുതിയ റെക്കോർഡ് ചേർക്കുന്നു: <strong>%(patient.name)s</strong>"
+
+#: records/templates/records/add_record_form.html:19
+#: records/templates/records/doctor_dashboard.html:30
+#: records/templates/records/records.html:43
+msgid "Symptoms"
+msgstr "ലക്ഷണങ്ങൾ"
+
+#: records/templates/records/add_record_form.html:23
+#: records/templates/records/doctor_dashboard.html:31
+#: records/templates/records/patient_dashboard.html:146
+#: records/templates/records/records.html:44
+msgid "Diagnosis"
+msgstr "രോഗനിർണയം"
+
+#: records/templates/records/add_record_form.html:27
+#: records/templates/records/doctor_dashboard.html:32
+#: records/templates/records/records.html:45
+msgid "Prescription"
+msgstr "കുറിപ്പടി"
+
+#: records/templates/records/add_record_form.html:31
+#: records/templates/records/doctor_dashboard.html:33
+#: records/templates/records/records.html:46
+msgid "Dose"
+msgstr "ഡോസ്"
+
+#: records/templates/records/add_record_form.html:35
+msgid "Health Report (Optional)"
+msgstr "ആരോഗ്യ റിപ്പോർട്ട് (ഓപ്ഷണൽ)"
+
+#: records/templates/records/add_record_form.html:38
+#: records/templates/records/doctor_dashboard.html:35
+msgid "Save Record"
+msgstr "റെക്കോർഡ് സേവ് ചെയ്യുക"
+
+#: records/templates/records/add_record_form.html:39
+#: records/templates/records/edit_patient_profile.html:36
+msgid "Cancel"
+msgstr "റദ്ദാക്കുക"
+
+#: records/templates/records/base.html:9
+#: records/templates/records/base.html:275
+msgid "AyushCare"
+msgstr "ആയുഷ്കെയർ"
+
+#: records/templates/records/base.html:281
+#: records/templates/records/base.html:309
+msgid "Dashboard"
+msgstr "ഡാഷ്ബോർഡ്"
+
+#: records/templates/records/base.html:286
+#: records/templates/records/base.html:314
+msgid "Appointments"
+msgstr "അപ്പോയിന്റ്മെന്റുകൾ"
+
+#: records/templates/records/base.html:291
+#: records/templates/records/doctor_dashboard.html:98
+msgid "Search Patient"
+msgstr "രോഗിയെ തിരയുക"
+
+#: records/templates/records/base.html:297
+msgid "Manage Conditions"
+msgstr "അവസ്ഥകൾ നിയന്ത്രിക്കുക"
+
+#: records/templates/records/base.html:303
+#: records/templates/records/base.html:325
+msgid "My Profile"
+msgstr "എൻ്റെ പ്രൊഫൈൽ"
+
+#: records/templates/records/base.html:319
+msgid "My Records"
+msgstr "എൻ്റെ രേഖകൾ"
+
+#: records/templates/records/base.html:332
+msgid "Logout"
+msgstr "ലോഗ് ഔട്ട്"
+
+#: records/templates/records/doctor_appointments.html:6
+msgid "My Appointments"
+msgstr "എൻ്റെ അപ്പോയിന്റ്മെന്റുകൾ"
+
+#: records/templates/records/doctor_appointments.html:7
+msgid "A complete list of all scheduled appointments."
+msgstr "ഷെഡ്യൂൾ ചെയ്ത എല്ലാ അപ്പോയിന്റ്മെന്റുകളുടെയും പൂർണ്ണമായ ലിസ്റ്റ്."
+
+#: records/templates/records/doctor_appointments.html:16
+#: records/templates/records/doctor_dashboard.html:29
+#: records/templates/records/doctor_dashboard.html:41
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Patient"
+msgstr "രോഗി"
+
+#: records/templates/records/doctor_appointments.html:17
+msgid "Date & Time"
+msgstr "തീയതിയും സമയവും"
+
+#: records/templates/records/doctor_appointments.html:18
+msgid "Mode"
+msgstr "രീതി"
+
+#: records/templates/records/doctor_appointments.html:19
+msgid "Reason"
+msgstr "കാരണം"
+
+#: records/templates/records/doctor_appointments.html:20
+msgid "Status"
+msgstr "നില"
+
+#: records/templates/records/doctor_appointments.html:21
+msgid "Actions"
+msgstr "പ്രവൃത്തികൾ"
+
+#: records/templates/records/doctor_appointments.html:51
+msgid "Update"
+msgstr "അപ്ഡേറ്റ് ചെയ്യുക"
+
+#: records/templates/records/doctor_appointments.html:57
+msgid "You have no appointments."
+msgstr "നിങ്ങൾക്ക് അപ്പോയിന്റ്മെന്റുകൾ ഒന്നുമില്ല."
+
+#: records/templates/records/doctor_dashboard.html:6
+#, python-format
+msgid "Welcome, Dr. %(doctor_name)s!"
+msgstr "സ്വാഗതം, ഡോ. %(doctor_name)s!"
+
+#: records/templates/records/doctor_dashboard.html:9
+msgid "Here is your control center."
+msgstr "ഇവിടെ നിങ്ങളുടെ നിയന്ത്രണ കേന്ദ്രം."
+
+#: records/templates/records/doctor_dashboard.html:19
+msgid "Add Medical Record"
+msgstr "മെഡിക്കൽ റെക്കോർഡ് ചേർക്കുക"
+
+#: records/templates/records/doctor_dashboard.html:20
+#: records/templates/records/doctor_dashboard.html:44
+msgid "Add Condition"
+msgstr "അവസ്ഥ ചേർക്കുക"
+
+#: records/templates/records/doctor_dashboard.html:21
+msgid "View Active Conditions"
+msgstr "സജീവമായ അവസ്ഥകൾ കാണുക"
+
+#: records/templates/records/doctor_dashboard.html:34
+msgid "Health Report"
+msgstr "ആരോഗ്യ റിപ്പോർട്ട്"
+
+#: records/templates/records/doctor_dashboard.html:42
+msgid "Condition Name"
+msgstr "അവസ്ഥയുടെ പേര്"
+
+#: records/templates/records/doctor_dashboard.html:43
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Start Date"
+msgstr "തുടങ്ങുന്ന തീയതി"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Condition"
+msgstr "അവസ്ഥ"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Action"
+msgstr "പ്രവൃത്തി"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "Edit / Complete"
+msgstr "എഡിറ്റ് / പൂർത്തിയാക്കുക"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "No active conditions found."
+msgstr "സജീവമായ അവസ്ഥകൾ ഒന്നും കണ്ടെത്തിയില്ല."
+
+#: records/templates/records/doctor_dashboard.html:61
+msgid "Upcoming Appointments"
+msgstr "വരാനിരിക്കുന്ന അപ്പോയിന്റ്മെന്റുകൾ"
+
+#: records/templates/records/doctor_dashboard.html:62
+msgid "View All"
+msgstr "എല്ലാം കാണുക"
+
+#: records/templates/records/doctor_dashboard.html:78
+msgid "Scheduled"
+msgstr "ഷെഡ്യൂൾ ചെയ്തു"
+
+#: records/templates/records/doctor_dashboard.html:79
+#: records/templates/records/patient_dashboard.html:121
+msgid "Completed"
+msgstr "പൂർത്തിയായി"
+
+#: records/templates/records/doctor_dashboard.html:80
+msgid "Pending"
+msgstr "തീരുമാനമായിട്ടില്ല"
+
+#: records/templates/records/doctor_dashboard.html:81
+msgid "Cancelled"
+msgstr "റദ്ദാക്കി"
+
+#: records/templates/records/doctor_dashboard.html:88
+msgid "No upcoming appointments."
+msgstr "വരാനിരിക്കുന്ന അപ്പോയിന്റ്മെന്റുകൾ ഒന്നുമില്ല."
+
+#: records/templates/records/doctor_dashboard.html:99
+msgid "Go to Search Page"
+msgstr "തിരയൽ പേജിലേക്ക് പോകുക"
+
+#: records/templates/records/doctor_profile.html:7
+msgid "Doctor Profile"
+msgstr "ഡോക്ടറുടെ പ്രൊഫൈൽ"
+
+#: records/templates/records/doctor_profile.html:8
+msgid "Your professional and practice information."
+msgstr "നിങ്ങളുടെ പ്രൊഫഷണൽ, പ്രാക്ടീസ് വിവരങ്ങൾ."
+
+#: records/templates/records/doctor_profile.html:11
+#: records/templates/records/patient_profile.html:11
+msgid "Edit Profile"
+msgstr "പ്രൊഫൈൽ എഡിറ്റ് ചെയ്യുക"
+
+#: records/templates/records/doctor_profile.html:22
+#, python-format
+msgid "Dr. %(doctor.name)s"
+msgstr "ഡോ. %(doctor.name)s"
+
+#: records/templates/records/doctor_profile.html:35
+msgid "Gender"
+msgstr "ലിംഗം"
+
+#: records/templates/records/doctor_profile.html:38
+#: records/templates/records/edit_patient_profile.html:15
+#: records/templates/records/patient_profile.html:31
+msgid "Date of Birth"
+msgstr "ജനന തീയതി"
+
+#: records/templates/records/doctor_profile.html:41
+msgid "Phone"
+msgstr "ഫോൺ"
+
+#: records/templates/records/doctor_profile.html:44
+msgid "Email"
+msgstr "ഇമെയിൽ"
+
+#: records/templates/records/doctor_profile.html:47
+msgid "Experience"
+msgstr "പ്രവൃത്തിപരിചയം"
+
+#: records/templates/records/doctor_profile.html:48
+#, python-format
+msgid "%(doctor.experience)s Years"
+msgstr "%(doctor.experience)s വർഷം"
+
+#: records/templates/records/doctor_profile.html:50
+msgid "Registration No"
+msgstr "രജിസ്ട്രേഷൻ നമ്പർ"
+
+#: records/templates/records/doctor_profile.html:53
+msgid "Current Affiliation"
+msgstr "നിലവിലെ അഫിലിയേഷൻ"
+
+#: records/templates/records/doctor_profile.html:59
+msgid "Practice Information"
+msgstr "പ്രാക്ടീസ് വിവരങ്ങൾ"
+
+#: records/templates/records/doctor_profile.html:62
+msgid "Clinic Address"
+msgstr "ക്ലിനിക്ക് വിലാസം"
+
+#: records/templates/records/doctor_profile.html:63
+msgid "Consultation Hours"
+msgstr "കൺസൾട്ടേഷൻ സമയം"
+
+#: records/templates/records/doctor_profile.html:64
+msgid "Languages Spoken"
+msgstr "സംസാരിക്കുന്ന ഭാഷകൾ"
+
+#: records/templates/records/doctor_profile.html:65
+msgid "Consultation Modes"
+msgstr "കൺസൾട്ടേഷൻ രീതികൾ"
+
+#: records/templates/records/doctor_profile.html:71
+msgid "Qualifications"
+msgstr "യോഗ്യതകൾ"
+
+#: records/templates/records/edit_patient_profile.html:5
+msgid "Edit My Profile"
+msgstr "എൻ്റെ പ്രൊഫൈൽ എഡിറ്റ് ചെയ്യുക"
+
+#: records/templates/records/edit_patient_profile.html:6
+msgid "Update your health and personal information."
+msgstr "നിങ്ങളുടെ ആരോഗ്യപരവും വ്യക്തിപരവുമായ വിവരങ്ങൾ അപ്ഡേറ്റ് ചെയ്യുക."
+
+#: records/templates/records/edit_patient_profile.html:13
+#: records/templates/records/patient_profile.html:30
+msgid "Personal Details"
+msgstr "വ്യക്തിഗത വിവരങ്ങൾ"
+
+#: records/templates/records/edit_patient_profile.html:14
+msgid "Full Name"
+msgstr "മുഴുവൻ പേര്"
+
+#: records/templates/records/edit_patient_profile.html:17
+#: records/templates/records/patient_profile.html:34
+msgid "Health Metrics"
+msgstr "ആരോഗ്യ അളവുകൾ"
+
+#: records/templates/records/edit_patient_profile.html:18
+#: records/templates/records/patient_onboarding.html:19
+#: records/templates/records/patient_profile.html:35
+msgid "Blood Group"
+msgstr "ബ്ലഡ് ഗ്രൂപ്പ്"
+
+#: records/templates/records/edit_patient_profile.html:19
+msgid "Height (cm)"
+msgstr "ഉയരം (സെ.മീ)"
+
+#: records/templates/records/edit_patient_profile.html:20
+msgid "Weight (kg)"
+msgstr "ഭാരം (കി.ഗ്രാം)"
+
+#: records/templates/records/edit_patient_profile.html:22
+#: records/templates/records/patient_onboarding.html:33
+#: records/templates/records/patient_profile.html:39
+msgid "Medical History"
+msgstr "ചികിത്സാ ചരിത്രം"
+
+#: records/templates/records/edit_patient_profile.html:23
+#: records/templates/records/patient_onboarding.html:34
+#: records/templates/records/patient_profile.html:40
+msgid "Allergies"
+msgstr "അലർജികൾ"
+
+#: records/templates/records/edit_patient_profile.html:24
+#: records/templates/records/patient_onboarding.html:35
+#: records/templates/records/patient_profile.html:41
+msgid "Chronic Diseases"
+msgstr "വിട്ടുമാറാത്ത രോഗങ്ങൾ"
+
+#: records/templates/records/edit_patient_profile.html:26
+msgid "Profile Picture"
+msgstr "പ്രൊഫൈൽ ചിത്രം"
+
+#: records/templates/records/edit_patient_profile.html:28
+msgid "Upload New Picture"
+msgstr "പുതിയ ചിത്രം അപ്‌ലോഡ് ചെയ്യുക"
+
+#: records/templates/records/edit_patient_profile.html:31
+#, python-format
+msgid "Current: %(patient.profile_picture.name)s"
+msgstr "നിലവിലുള്ളത്: %(patient.profile_picture.name)s"
+
+#: records/templates/records/edit_patient_profile.html:35
+msgid "Save Changes"
+msgstr "മാറ്റങ്ങൾ സേവ് ചെയ്യുക"
+
+#: records/templates/records/patient_dashboard.html:62
+#, python-format
+msgid "Welcome, %(patient_name)s!"
+msgstr "സ്വാഗതം, %(patient_name)s!"
+
+#: records/templates/records/patient_dashboard.html:63
+msgid "Here is your health summary and quick actions."
+msgstr "ഇവിടെ നിങ്ങളുടെ ആരോഗ്യ സംഗ്രഹവും പെട്ടെന്നുള്ള പ്രവർത്തനങ്ങളും."
+
+#: records/templates/records/patient_dashboard.html:87
+msgid "New Consultation"
+msgstr "പുതിയ കൺസൾട്ടേഷൻ"
+
+#: records/templates/records/patient_dashboard.html:88
+msgid "Book a new appointment"
+msgstr "പുതിയ അപ്പോയിന്റ്മെന്റ് ബുക്ക് ചെയ്യുക"
+
+#: records/templates/records/patient_dashboard.html:94
+msgid "AI Diet Advisor"
+msgstr "AI ഡയറ്റ് ഉപദേശകൻ"
+
+#: records/templates/records/patient_dashboard.html:95
+msgid "Get personalized diet tips"
+msgstr "വ്യക്തിഗതമാക്കിയ ഡയറ്റ് ടിപ്പുകൾ നേടുക"
+
+#: records/templates/records/patient_dashboard.html:101
+msgid "Ingredient Scanner"
+msgstr "ചേരുവ സ്കാനർ"
+
+#: records/templates/records/patient_dashboard.html:102
+msgid "Check product safety"
+msgstr "ഉൽപ്പന്ന സുരക്ഷ പരിശോധിക്കുക"
+
+#: records/templates/records/patient_dashboard.html:111
+msgid "Your Health Conditions"
+msgstr "നിങ്ങളുടെ ആരോഗ്യ അവസ്ഥകൾ"
+
+#: records/templates/records/patient_dashboard.html:118
+msgid "Since"
+msgstr "മുതൽ"
+
+#: records/templates/records/patient_dashboard.html:123
+msgid "Active"
+msgstr "സജീവം"
+
+#: records/templates/records/patient_dashboard.html:128
+msgid "You have no health conditions recorded."
+msgstr "നിങ്ങൾക്ക് ആരോഗ്യപരമായ അവസ്ഥകളൊന്നും രേഖപ്പെടുത്തിയിട്ടില്ല."
+
+#: records/templates/records/patient_dashboard.html:138
+msgid "Your Medical History"
+msgstr "നിങ്ങളുടെ ചികിത്സാ ചരിത്രം"
+
+#: records/templates/records/patient_dashboard.html:143
+#, python-format
+msgid "Date: %(record_date)s with <strong>Dr. %(doctor_name)s</strong>"
+msgstr "തീയതി: %(record_date)s, <strong>ഡോ. %(doctor_name)s</strong>-നൊപ്പം"
+
+#: records/templates/records/patient_dashboard.html:150
+msgid "You have no medical records found."
+msgstr "നിങ്ങളുടെ മെഡിക്കൽ രേഖകളൊന്നും കണ്ടെത്തിയില്ല."
+
+#: records/templates/records/patient_dashboard.html:159
+msgid "AI Health Assistant"
+msgstr "AI ആരോഗ്യ സഹായി"
+
+#: records/templates/records/patient_dashboard.html:163
+#, python-format
+msgid "Hello %(patient_name)s, how can I help you today?"
+msgstr "ഹലോ %(patient_name)s, ഇന്ന് ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കണം?"
+
+#: records/templates/records/patient_dashboard.html:168
+msgid "Ask your question here..."
+msgstr "നിങ്ങളുടെ ചോദ്യം ഇവിടെ ചോദിക്കുക..."
+
+#: records/templates/records/patient_dashboard.html:169
+msgid "Send"
+msgstr "അയയ്ക്കുക"
+
+#: records/templates/records/patient_onboarding.html:12
+msgid "Welcome to AyushCare!"
+msgstr "ആയുഷ്കെയറിലേക്ക് സ്വാഗതം!"
+
+#: records/templates/records/patient_onboarding.html:13
+msgid "Let's set up your health profile. (Step 1 of 2)"
+msgstr "നിങ്ങളുടെ ആരോഗ്യ പ്രൊഫൈൽ സജ്ജമാക്കാം. (ഘട്ടം 1/2)"
+
+#: records/templates/records/patient_onboarding.html:18
+msgid "Basic Information"
+msgstr "അടിസ്ഥാന വിവരങ്ങൾ"
+
+#: records/templates/records/patient_onboarding.html:19
+msgid "e.g., O+"
+msgstr "ഉദാ., O+"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "Height (in cm)"
+msgstr "ഉയരം (സെ.മീ-ൽ)"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "e.g., 175"
+msgstr "ഉദാ., 175"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "Weight (in kg)"
+msgstr "ഭാരം (കി.ഗ്രാം-ൽ)"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "e.g., 70"
+msgstr "ഉദാ., 70"
+
+#: records/templates/records/patient_onboarding.html:22
+msgid "Next Step"
+msgstr "അടുത്ത ഘട്ടം"
+
+#: records/templates/records/patient_onboarding.html:27
+msgid "Almost Done!"
+msgstr "ഏതാണ്ട് കഴിഞ്ഞു!"
+
+#: records/templates/records/patient_onboarding.html:28
+msgid "Just a little more about your medical history. (Step 2 of 2)"
+msgstr "നിങ്ങളുടെ ചികിത്സാ ചരിത്രത്തെക്കുറിച്ച് കുറച്ചുകൂടി. (ഘട്ടം 2/2)"
+
+#: records/templates/records/patient_onboarding.html:34
+msgid "e.g., Peanuts, Pollen, Dust"
+msgstr "ഉദാ., നിലക്കടല, പൂമ്പൊടി, പൊടി"
+
+#: records/templates/records/patient_onboarding.html:35
+msgid "e.g., Diabetes, Hypertension, Asthma"
+msgstr "ഉദാ., പ്രമേഹം, രക്താതിമർദ്ദം, ആസ്ത്മ"
+
+#: records/templates/records/patient_onboarding.html:36
+msgid "Finish & Go to My Profile"
+msgstr "പൂർത്തിയാക്കി എൻ്റെ പ്രൊഫൈലിലേക്ക് പോകുക"
+
+#: records/templates/records/patient_profile.html:7
+msgid "My Health Profile"
+msgstr "എൻ്റെ ആരോഗ്യ പ്രൊഫൈൽ"
+
+#: records/templates/records/patient_profile.html:8
+msgid "Your complete health and personal information."
+msgstr "നിങ്ങളുടെ സമ്പൂർണ്ണ ആരോഗ്യ, വ്യക്തിഗത വിവരങ്ങൾ."
+
+#: records/templates/records/patient_profile.html:32
+msgid "Aadhar"
+msgstr "ആധാർ"
+
+#: records/templates/records/patient_profile.html:36
+msgid "Height"
+msgstr "ഉയരം"
+
+#: records/templates/records/patient_profile.html:36
+#, python-format
+msgid "%(patient.height|default:0)s cm"
+msgstr "%(patient.height|default:0)s സെ.മീ"
+
+#: records/templates/records/patient_profile.html:37
+msgid "Weight"
+msgstr "ഭാരം"
+
+#: records/templates/records/patient_profile.html:37
+#, python-format
+msgid "%(patient.weight|default:0)s kg"
+msgstr "%(patient.weight|default:0)s കി.ഗ്രാം"
+
+#: records/templates/records/patient_profile.html:40
+#: records/templates/records/patient_profile.html:41
+msgid "None specified"
+msgstr "ഒന്നും വ്യക്തമാക്കിയിട്ടില്ല"
+
+#: records/templates/records/records.html:31
+msgid "My Complete Medical Records"
+msgstr "എൻ്റെ സമ്പൂർണ്ണ മെഡിക്കൽ രേഖകൾ"
+
+#: records/templates/records/records.html:32
+msgid "A detailed history of all your consultations."
+msgstr "നിങ്ങളുടെ എല്ലാ കൺസൾട്ടേഷനുകളുടെയും വിശദമായ ചരിത്രം."
+
+#: records/templates/records/records.html:41
+msgid "Date"
+msgstr "തീയതി"
+
+#: records/templates/records/records.html:42
+msgid "Doctor"
+msgstr "ഡോക്ടർ"
+
+#: records/templates/records/records.html:47
+msgid "Report"
+msgstr "റിപ്പോർട്ട്"
+
+#: records/templates/records/records.html:62
+msgid "View"
+msgstr "കാണുക"
+
+#: records/templates/records/records.html:65
+msgid "No File"
+msgstr "ഫയൽ ഇല്ല"
+
+#: records/templates/records/records.html:71
+msgid "You have no medical records yet."
+msgstr "നിങ്ങൾക്ക് ഇതുവരെ മെഡിക്കൽ രേഖകളൊന്നും ഇല്ല."

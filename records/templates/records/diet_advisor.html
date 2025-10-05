@@ -1,0 +1,337 @@
+{% extends 'records/base.html' %}
+{% block styles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Advisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define AyushCare Color Palette */
+        :root {
+            --ayush-primary: #8B4543; /* Deep Maroon/Terracotta */
+            --ayush-light: #FBF8FF; /* Light Cream/Off-White */
+            --ayush-background: #FBF8F4; /* Soft Tan/Textured Background */
+        }
+
+        /* --- BACKGROUND ANIMATION --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ayush-background); 
+            /* Set up the animated background gradient */
+            background-image: radial-gradient(circle at top left, #FDF7EF 0%, var(--ayush-background) 50%, #FCF5F0 100%);
+            background-size: 300% 300%;
+            animation: moveBackground 40s ease infinite alternate; /* Slow, gentle animation */
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* --- UI COMPONENTS --- */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            position: relative; /* Needed for z-index */
+            z-index: 10;
+        }
+        
+        /* Custom spinner for loading state */
+        .spinner {
+            border: 4px solid rgba(139, 69, 67, 0.4); 
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: var(--ayush-primary);
+            animation: spin 1s linear infinite; 
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Style for the autocomplete suggestions box */
+        .suggestions-box {
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
+        .suggestions-box div {
+            transition: background-color 0.15s ease;
+        }
+        .suggestions-box div:hover {
+            background-color: #FEF7EE; 
+        }
+
+        /* Input field focus animation */
+        .input-animated {
+            transition: all 0.2s ease-out;
+        }
+        .input-animated:focus {
+            box-shadow: 0 0 0 4px rgba(139, 69, 67, 0.2);
+            border-color: var(--ayush-primary);
+        }
+        
+        /* Tailwind configuration override for button/accent color */
+        .btn-primary {
+            background-color: var(--ayush-primary);
+            color: white;
+            transition: all 0.3s ease; 
+        }
+        .btn-primary:hover {
+            background-color: #A0522D; 
+            transform: scale(1.02); 
+            box-shadow: 0 10px 20px rgba(139, 69, 67, 0.3); 
+        }
+
+        /* CSS for the Results Fade-In Animation */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .results-animated {
+            animation: fadeInSlideUp 0.6s ease-out forwards;
+        }
+        
+    </style>
+</head>
+<body class="p-4 md:p-10">
+    <a href="{% url 'patient_dashboard' %}" class="btn btn-secondary mb-4">
+        &larr; Back to Dashboard
+    </a>
+    <div class="container flex justify-end mb-4">
+        <div class="relative inline-block text-left">
+            <select id="language-switcher" class="bg-white border border-gray-300 rounded-lg shadow-md p-2 text-gray-700 font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8B4543]">
+                <option value="en">English</option>
+                <option value="hi">हिंदी (Hindi)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container bg-white p-6 md:p-10 rounded-3xl shadow-2xl border border-gray-100">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 leading-tight" id="header-title">
+                Diet Advisor 🌿
+            </h1>
+            <p class="text-gray-500 mt-2 text-lg" id="header-subtitle">
+                </p>
+        </header>
+
+        <div class="space-y-6">
+            <div class="relative">
+                <label for="diseaseInput" class="block text-base font-semibold text-gray-700 mb-2" id="label-disease">Disease  <span class="text-red-500">*</span></label>
+                <input type="text" id="diseaseInput" class="w-full p-4 border border-gray-300 rounded-xl transition duration-200 text-lg input-animated" placeholder="Example: Dengue fever">
+                <div id="diseaseSuggestions" class="absolute z-20 w-full bg-white border border-gray-200 rounded-lg mt-2 suggestions-box hidden"></div>
+            </div>
+            
+            <div class="relative">
+                <label for="medicineInput" class="block text-base font-semibold text-gray-700 mb-2" id="label-medicine">Medicine  - Optional</label>
+                <input type="text" id="medicineInput" class="w-full p-4 border border-gray-300 rounded-xl transition duration-200 text-lg input-animated" placeholder="Example: paracetamol">
+                <div id="medicineSuggestions" class="absolute z-10 w-full bg-white border border-gray-200 rounded-lg mt-2 suggestions-box hidden"></div>
+            </div>
+        </div>
+
+        <button id="getAdviceBtn" class="w-full flex items-center justify-center btn-primary p-4 rounded-xl mt-8 font-extrabold text-lg focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-opacity-50 focus:ring-[#8B4543]">
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.044M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span id="button-text">Get Personalized Advice</span>
+        </button>
+
+        <div id="loader" class="text-center my-8 hidden">
+            <div class="spinner mx-auto"></div>
+            <p style="color: var(--ayush-primary);" class="mt-4 text-lg font-medium" id="loader-text">Getting compatible expert advice from AI...</p>
+        </div>
+        
+        <div id="results" class="mt-10">
+            </div>
+
+    </div>
+
+    <script>
+        // --- LANGUAGE DATA ---
+        const translations = {
+            en: {
+                title: 'Diet Advisor 🌿',
+                subtitle: 'Enter your disease and medicine to get advice.',
+                labelDisease: 'Disease ',
+                labelMedicine: 'Medicine - Optional',
+                placeholderDisease: 'Example: Dengue fever',
+                placeholderMedicine: 'Example: paracetamol',
+                buttonText: 'Get Personalized Advice',
+                loaderText: 'Getting compatible expert advice from AI...',
+                resultsDisclaimer: 'Disclaimer: This advice is AI-generated and for informational purposes only. Always consult a qualified medical professional for personalized dietary and medical advice.',
+                recommendedTitle: 'Recommended Foods (Khana Chahiye)',
+                avoidTitle: 'Foods to Avoid (Nahi Khana Chahiye)',
+                errorNoDisease: 'Please enter a disease name to get advice.',
+                errorApiFailed: "Sorry, the AI service failed to respond. Please try again later.",
+            },
+            hi: {
+                title: 'आहार सलाहकार 🌿',
+                subtitle: 'अपनी बीमारी (disease) और दवाई (medicine) लिख कर सलाह पाएं।',
+                labelDisease: 'बीमारी  <span class="text-red-500">*</span>',
+                labelMedicine: 'दवाई  - वैकल्पिक',
+                placeholderDisease: 'उदाहरण: डेंगू बुखार',
+                placeholderMedicine: 'उदाहरण: पैरासिटामोल',
+                buttonText: 'व्यक्तिगत सलाह प्राप्त करें',
+                loaderText: 'AI से संगत विशेषज्ञ सलाह प्राप्त हो रही है...',
+                resultsDisclaimer: 'अस्वीकरण: यह सलाह AI-जनित है और केवल सूचनात्मक उद्देश्यों के लिए है। व्यक्तिगत आहार और चिकित्सा सलाह के लिए हमेशा एक योग्य चिकित्सक से परामर्श लें।',
+                recommendedTitle: 'सुझाए गए खाद्य पदार्थ (Khana Chahiye)',
+                avoidTitle: 'परहेज करने वाले खाद्य पदार्थ (Nahi Khana Chahiye)',
+                errorNoDisease: 'सलाह प्राप्त करने के लिए कृपया बीमारी का नाम दर्ज करें।',
+                errorApiFailed: "क्षमा करें, AI सेवा जवाब देने में विफल रही। कृपया बाद में पुनः प्रयास करें।",
+            }
+        };
+    
+        let currentLang = 'en';
+    
+        // --- DOM Elements ---
+        const languageSwitcher = document.getElementById('language-switcher');
+        const diseaseInput = document.getElementById('diseaseInput');
+        const medicineInput = document.getElementById('medicineInput');
+        const getAdviceBtn = document.getElementById('getAdviceBtn');
+        const loader = document.getElementById('loader');
+        const resultsDiv = document.getElementById('results');
+        
+        // --- LANGUAGE SWITCHER FUNCTIONALITY ---
+        function switchLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            document.getElementById('header-title').innerHTML = t.title;
+            document.getElementById('header-subtitle').innerHTML = t.subtitle;
+            document.getElementById('label-disease').innerHTML = t.labelDisease;
+            document.getElementById('label-medicine').innerHTML = t.labelMedicine;
+            document.getElementById('button-text').textContent = t.buttonText;
+            document.getElementById('loader-text').textContent = t.loaderText;
+            diseaseInput.placeholder = t.placeholderDisease;
+            medicineInput.placeholder = t.placeholderMedicine;
+            resultsDiv.innerHTML = '';
+        }
+    
+        languageSwitcher.addEventListener('change', (e) => {
+            switchLanguage(e.target.value);
+        });
+    
+        // Initialize to English
+        switchLanguage('en');
+    
+        // --- CSRF TOKEN FUNCTION ---
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    
+        // --- CORE API CALL LOGIC ---
+        getAdviceBtn.addEventListener('click', findAndDisplayAdvice);
+        
+        async function findAndDisplayAdvice() {
+            const t = translations[currentLang];
+            const diseaseQuery = diseaseInput.value.toLowerCase().trim();
+            const medQuery = medicineInput.value.toLowerCase().trim();
+    
+            if (!diseaseQuery) {
+                resultsDiv.innerHTML = `<p class="text-red-500 font-medium text-center bg-red-50 p-3 rounded-lg border border-red-200">${t.errorNoDisease}</p>`;
+                return;
+            }
+            
+            loader.classList.remove('hidden');
+            resultsDiv.innerHTML = ''; 
+    
+            try {
+                // Django backend ko call karein
+                const response = await fetch('/api/diet-advice/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCookie('csrftoken')
+                    },
+                    body: JSON.stringify({
+                        disease: diseaseQuery,
+                        medicine: medQuery,
+                        language: currentLang
+                    })
+                });
+    
+                if (!response.ok) throw new Error('Backend API call failed');
+                
+                const advice = await response.json();
+                if (advice.error) throw new Error(advice.error);
+    
+                displayResults(advice.recommend, advice.avoid, diseaseQuery, medQuery, true);
+    
+            } catch (error) {
+                console.error("API Error:", error);
+                resultsDiv.innerHTML = `<p class="text-red-600 font-medium text-center bg-red-50 p-3 rounded-lg border border-red-200">${t.errorApiFailed}</p>`;
+            } finally {
+                loader.classList.add('hidden');
+            }
+        }
+        
+        // --- DISPLAY RESULTS FUNCTION ---
+        function displayResults(recommendList, avoidList, diseaseName, medName, isGeminiRefined) {
+            const t = translations[currentLang];
+            let title = `${diseaseName.split(' (')[0].replace(/\b\w/g, l => l.toUpperCase())}`;
+            let subtitle = `Compatible Diet Plan`;
+            if (medName) {
+                subtitle += ` with ${medName.replace(/\b\w/g, l => l.toUpperCase())}`;
+            }
+    
+            let trustIndicator = isGeminiRefined 
+                ? `<span class="text-sm font-semibold ml-2 p-1 rounded-full bg-emerald-100 text-emerald-700">Powered by AI ✨</span>`
+                : ``;
+    
+            let tableHTML = `
+                <div class="mt-8 border border-gray-200 rounded-xl overflow-hidden shadow-lg bg-white results-animated">
+                    <div style="background-color: var(--ayush-light);" class="p-4 text-center border-b border-gray-200">
+                        <h2 style="color: var(--ayush-primary);" class="text-2xl font-extrabold flex items-center justify-center">${title} ${trustIndicator}</h2>
+                        <p class="text-md text-gray-600 font-medium">${subtitle}</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <div class="p-6 border-b md:border-b-0 md:border-r border-gray-200">
+                            <h3 class="flex items-center text-xl font-bold text-green-700 mb-4">
+                                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                ${t.recommendedTitle}
+                            </h3>
+                            <ul class="space-y-3 text-gray-800">
+                                ${recommendList.map(item => `<li class="flex items-start"><span class="h-2 w-2 bg-green-600 rounded-full flex-shrink-0 mt-2 mr-3"></span>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="flex items-center text-xl font-bold text-red-700 mb-4">
+                                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                ${t.avoidTitle}
+                            </h3>
+                            <ul class="space-y-3 text-gray-800">
+                                ${avoidList.map(item => `<li class="flex items-start"><span class="h-2 w-2 bg-red-600 rounded-full flex-shrink-0 mt-2 mr-3"></span>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-gray-50 text-center text-sm text-gray-500 border-t border-gray-200">
+                        <p>${t.resultsDisclaimer}</p>
+                    </div>
+                </div>
+            `;
+            resultsDiv.innerHTML += tableHTML;
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

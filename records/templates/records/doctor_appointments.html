@@ -1,0 +1,66 @@
+{% extends 'records/base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="container-fluid">
+    <div class="dashboard-header mb-4">
+        <h2><i class="fas fa-calendar-alt me-2"></i>{% translate "My Appointments" %}</h2>
+        <p class="text-muted">{% translate "A complete list of all scheduled appointments." %}</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>{% translate "Patient" %}</th>
+                            <th>{% translate "Date & Time" %}</th>
+                            <th>{% translate "Mode" %}</th>
+                            <th>{% translate "Reason" %}</th>
+                            <th>{% translate "Status" %}</th>
+                            <th>{% translate "Actions" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for appt in appointments %}
+                        <tr>
+                            <td>{{ appt.patient.name }}</td>
+                            <td>{{ appt.appointment_datetime|date:"d M Y, h:i A" }}</td>
+                            <td>{{ appt.get_mode_display }}</td>
+                            <td>{{ appt.reason }}</td>
+                            <td>
+                                <span class="badge 
+                                    {% if appt.status == 'Completed' %}bg-success
+                                    {% elif appt.status == 'Cancelled' %}bg-danger
+                                    {% elif appt.status == 'Pending Confirmation' %}bg-warning text-dark
+                                    {% else %}bg-primary
+                                    {% endif %}">
+                                    {{ appt.status }}
+                                </span>
+                            </td>
+                            <td>
+                                <form action="{% url 'update_appointment_status' appt.id %}" method="post" class="d-flex">
+                                    {% csrf_token %}
+                                    <select name="status" class="form-select form-select-sm me-2">
+                                        {% for status_choice in appt.STATUS_CHOICES %}
+                                            <option value="{{ status_choice.0 }}" {% if appt.status == status_choice.0 %}selected{% endif %}>
+                                                {{ status_choice.1 }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary">{% translate "Update" %}</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center py-4">{% translate "You have no appointments." %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

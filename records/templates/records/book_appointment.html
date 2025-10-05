@@ -1,0 +1,167 @@
+{% extends 'records/base.html' %}
+
+{% load i18n %}
+{% block styles %}
+<style>
+    /* --- Global Styles --- */
+    :root {
+        --primary-color: #86574d;
+        --confirmed-bg: #E8F5E9;
+        --confirmed-text: #2E7D32;
+        --pending-bg: #FFF3E0;
+        --pending-text: #EF6C00;
+        --cancelled-bg: #fbeeee;
+        --cancelled-text: #d9534f;
+    }
+    .main-container {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .dashboard-header {
+        background: linear-gradient(135deg, #a06e62, #86574d); 
+        color: white; 
+        padding: 25px 30px; 
+        border-radius: 20px; 
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .dashboard-header h2 { margin: 0; font-weight: 600; font-size: 2rem; }
+    .appointment-form-container {
+        background-color: #fff; padding: 25px; border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07); margin-bottom: 30px;
+    }
+    .appointment-form-container h3 {
+        margin-top: 0; margin-bottom: 20px; text-align: center;
+        font-size: 1.5rem; color: var(--primary-color);
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+    @media (min-width: 768px) { .form-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label { margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+        font-family: 'Poppins', sans-serif; box-sizing: border-box; background-color: #f9f9f9;
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .book-btn {
+        grid-column: 1 / -1; background-color: var(--primary-color); color: white;
+        border: none; padding: 15px; border-radius: 8px; font-size: 1rem; font-weight: 600;
+        cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .book-btn:hover { background-color: #6c463c; transform: translateY(-2px); }
+    .list-header { font-size: 1.5rem; font-weight: 600; color: #333; margin-bottom: 20px; text-align: center; }
+    .appointment-card {
+        background-color: #fff; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        padding: 20px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr auto;
+        gap: 15px; align-items: center; border-left: 5px solid var(--primary-color);
+        cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .appointment-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+    .appointment-details h3 { margin: 0 0 10px 0; color: #333; font-size: 1.25rem; }
+    .appointment-meta { display: flex; flex-wrap: wrap; gap: 10px 20px; color: #777; font-size: 0.9rem; }
+    .appointment-meta span { display: flex; align-items: center; }
+    .appointment-meta i { margin-right: 8px; color: var(--primary-color); width: 15px; text-align: center; }
+    .appointment-status { text-align: right; }
+    .status-badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-weight: 500; font-size: 0.8rem; }
+    .status-Confirmed, .status-Scheduled { background-color: var(--confirmed-bg); color: var(--confirmed-text); }
+    .status-Cancelled { background-color: var(--cancelled-bg); color: var(--cancelled-text); }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="dashboard-header">
+        <h2>My Appointments</h2>
+    </div>
+    
+    <div class="appointment-form-container">
+        <h3>Book a New Appointment</h3>
+        <form id="appointmentForm" method="post" class="form-grid" action="{% url 'book_appointment' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="doctor">Select Doctor</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="" disabled selected>-- Choose a Doctor --</option>
+                    {% for doc in doctors %}
+                        <option value="{{ doc.id }}">{{ doc.name }} ({{ doc.specialty }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mode">Appointment Mode</label>
+                <select id="mode" name="mode" required>
+                    <option value="IN_CLINIC">In-person</option>
+                    <option value="VIDEO_CALL">Video Call</option>
+                    <option value="AUDIO_CALL">Audio Call</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Select Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Select Time</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group full-width">
+                <label for="reason">Reason for Appointment</label>
+                <textarea id="reason" name="reason" placeholder="Briefly describe your reason for the visit..."></textarea>
+            </div>
+            <button type="submit" class="book-btn">Book Appointment</button>
+        </form>
+    </div>
+
+    <div class="appointment-list-container" id="appointmentList">
+        <h3 class="list-header">Your Scheduled Appointments</h3>
+        {% for appt in appointments %}
+        <div class="appointment-card">
+            <div class="appointment-details">
+                <h3>Dr. {{ appt.doctor.name }}</h3>
+                <div class="appointment-meta">
+                    <span><i class="fas fa-calendar-alt"></i>{{ appt.appointment_datetime|date:"d M Y" }}</span>
+                    <span><i class="fas fa-clock"></i>{{ appt.appointment_datetime|time:"h:i A" }}</span>
+                    <span>
+                        {% if appt.mode == 'VIDEO_CALL' %}<i class="fas fa-video"></i>
+                        {% elif appt.mode == 'AUDIO_CALL' %}<i class="fas fa-phone-alt"></i>
+                        {% else %}<i class="fas fa-hospital"></i>{% endif %}
+                        {{ appt.get_mode_display }}
+                    </span>
+                </div>
+            </div>
+    
+            <div class="appointment-status">
+                
+                {% if appt.status == 'Scheduled' %}
+                    {% if appt.mode == 'VIDEO_CALL' %}
+                        <a href="https://wa.me/{{ appt.doctor.phone }}" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp me-2"></i>Video Call</a>
+                    {% elif appt.mode == 'AUDIO_CALL' %}
+                        <a href="https://wa.me/{{ appt.doctor.phone }}" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp me-2"></i>Audio Call</a>
+                    {% elif appt.mode == 'IN_CLINIC' %}
+                        <a href="https://www.google.com/maps/search/?api=1&query={{ appt.doctor.clinic_address|urlencode }}" target="_blank" class="btn btn-primary"><i class="fas fa-map-marker-alt me-2"></i>View Map</a>
+                    {% endif %}
+                {% else %}
+                    <span class="badge 
+                        {% if appt.status == 'Completed' %}bg-secondary
+                        {% elif appt.status == 'Cancelled' %}bg-danger
+                        {% else %}bg-warning text-dark
+                        {% endif %}">
+                        Status: {{ appt.status }}
+                    </span>
+                {% endif %}
+                </div>
+        </div>
+        {% empty %}
+            <p style="text-align: center;">You have no appointments scheduled.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+    });
+</script>
+{% endblock %}

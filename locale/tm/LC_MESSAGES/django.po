@@ -1,0 +1,620 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-05 09:56+0530\n"
+"PO-Revision-Date: 2025-10-05 12:04+0530\n"
+"Last-Translator: FULL NAME EMAIL@ADDRESS\n"
+"Language-Team: Tamil LL@li.org\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hospital_project/settings.py:45
+msgid "English"
+msgstr "ஆங்கிலம்"
+
+#: hospital_project/settings.py:46
+msgid "Hindi"
+msgstr "இந்தி"
+
+#: hospital_project/settings.py:47
+msgid "Marathi"
+msgstr "மராத்தி"
+
+#: hospital_project/settings.py:48
+msgid "Gujarati"
+msgstr "குஜராத்தி"
+
+#: hospital_project/settings.py:49
+msgid "Bengali"
+msgstr "பெங்காலி"
+
+#: hospital_project/settings.py:50
+msgid "Tamil"
+msgstr "தமிழ்"
+
+#: hospital_project/settings.py:51
+msgid "Telugu"
+msgstr "தெலுங்கு"
+
+#: hospital_project/settings.py:52
+msgid "Kannada"
+msgstr "கன்னடம்"
+
+#: hospital_project/settings.py:53
+msgid "Malayalam"
+msgstr "மலையாளம்"
+
+#: hospital_project/settings.py:54
+msgid "Odia"
+msgstr "ஒடியா"
+
+#: hospital_project/settings.py:55
+msgid "Urdu"
+msgstr "உருது"
+
+#: records/templates/records/add_record_form.html:7
+msgid "Add New Medical Record"
+msgstr "புதிய மருத்துவப் பதிவைச் சேர்க்கவும்"
+
+#: records/templates/records/add_record_form.html:9
+#, python-format
+msgid "You are adding a new record for: <strong>%(patient.name)s</strong>"
+msgstr "நீங்கள் இவருக்காக ஒரு புதிய பதிவைச் சேர்க்கிறீர்கள்: <strong>%(patient.name)s</strong>"
+
+#: records/templates/records/add_record_form.html:19
+#: records/templates/records/doctor_dashboard.html:30
+#: records/templates/records/records.html:43
+msgid "Symptoms"
+msgstr "அறிகுறிகள்"
+
+#: records/templates/records/add_record_form.html:23
+#: records/templates/records/doctor_dashboard.html:31
+#: records/templates/records/patient_dashboard.html:146
+#: records/templates/records/records.html:44
+msgid "Diagnosis"
+msgstr "நோய் கண்டறிதல்"
+
+#: records/templates/records/add_record_form.html:27
+#: records/templates/records/doctor_dashboard.html:32
+#: records/templates/records/records.html:45
+msgid "Prescription"
+msgstr "மருந்துச் சீட்டு"
+
+#: records/templates/records/add_record_form.html:31
+#: records/templates/records/doctor_dashboard.html:33
+#: records/templates/records/records.html:46
+msgid "Dose"
+msgstr "அளவு"
+
+#: records/templates/records/add_record_form.html:35
+msgid "Health Report (Optional)"
+msgstr "சுகாதார அறிக்கை (விருப்பத்தேர்வு)"
+
+#: records/templates/records/add_record_form.html:38
+#: records/templates/records/doctor_dashboard.html:35
+msgid "Save Record"
+msgstr "பதிவைச் சேமிக்கவும்"
+
+#: records/templates/records/add_record_form.html:39
+#: records/templates/records/edit_patient_profile.html:36
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: records/templates/records/base.html:9
+#: records/templates/records/base.html:275
+msgid "AyushCare"
+msgstr "ஆயுஷ்கேர்"
+
+#: records/templates/records/base.html:281
+#: records/templates/records/base.html:309
+msgid "Dashboard"
+msgstr "முகப்பு"
+
+#: records/templates/records/base.html:286
+#: records/templates/records/base.html:314
+msgid "Appointments"
+msgstr "சந்திப்புகள்"
+
+#: records/templates/records/base.html:291
+#: records/templates/records/doctor_dashboard.html:98
+msgid "Search Patient"
+msgstr "நோயாளியைத் தேடு"
+
+#: records/templates/records/base.html:297
+msgid "Manage Conditions"
+msgstr "நிலைகளை நிர்வகி"
+
+#: records/templates/records/base.html:303
+#: records/templates/records/base.html:325
+msgid "My Profile"
+msgstr "என் சுயவிவரம்"
+
+#: records/templates/records/base.html:319
+msgid "My Records"
+msgstr "என் பதிவுகள்"
+
+#: records/templates/records/base.html:332
+msgid "Logout"
+msgstr "வெளியேறு"
+
+#: records/templates/records/doctor_appointments.html:6
+msgid "My Appointments"
+msgstr "என் சந்திப்புகள்"
+
+#: records/templates/records/doctor_appointments.html:7
+msgid "A complete list of all scheduled appointments."
+msgstr "அனைத்து திட்டமிடப்பட்ட சந்திப்புகளின் முழுமையான பட்டியல்."
+
+#: records/templates/records/doctor_appointments.html:16
+#: records/templates/records/doctor_dashboard.html:29
+#: records/templates/records/doctor_dashboard.html:41
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Patient"
+msgstr "நோயாளி"
+
+#: records/templates/records/doctor_appointments.html:17
+msgid "Date & Time"
+msgstr "தேதி மற்றும் நேரம்"
+
+#: records/templates/records/doctor_appointments.html:18
+msgid "Mode"
+msgstr "முறை"
+
+#: records/templates/records/doctor_appointments.html:19
+msgid "Reason"
+msgstr "காரணம்"
+
+#: records/templates/records/doctor_appointments.html:20
+msgid "Status"
+msgstr "நிலை"
+
+#: records/templates/records/doctor_appointments.html:21
+msgid "Actions"
+msgstr "செயல்கள்"
+
+#: records/templates/records/doctor_appointments.html:51
+msgid "Update"
+msgstr "புதுப்பிக்கவும்"
+
+#: records/templates/records/doctor_appointments.html:57
+msgid "You have no appointments."
+msgstr "உங்களுக்கு சந்திப்புகள் எதுவும் இல்லை."
+
+#: records/templates/records/doctor_dashboard.html:6
+#, python-format
+msgid "Welcome, Dr. %(doctor_name)s!"
+msgstr "வருக, டாக்டர் %(doctor_name)s!"
+
+#: records/templates/records/doctor_dashboard.html:9
+msgid "Here is your control center."
+msgstr "இது உங்கள் கட்டுப்பாட்டு மையம்."
+
+#: records/templates/records/doctor_dashboard.html:19
+msgid "Add Medical Record"
+msgstr "மருத்துவப் பதிவைச் சேர்க்கவும்"
+
+#: records/templates/records/doctor_dashboard.html:20
+#: records/templates/records/doctor_dashboard.html:44
+msgid "Add Condition"
+msgstr "நிலையைச் சேர்க்கவும்"
+
+#: records/templates/records/doctor_dashboard.html:21
+msgid "View Active Conditions"
+msgstr "செயலில் உள்ள நிலைகளைக் காண்க"
+
+#: records/templates/records/doctor_dashboard.html:34
+msgid "Health Report"
+msgstr "சுகாதார அறிக்கை"
+
+#: records/templates/records/doctor_dashboard.html:42
+msgid "Condition Name"
+msgstr "நிலையின் பெயர்"
+
+#: records/templates/records/doctor_dashboard.html:43
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Start Date"
+msgstr "தொடக்க தேதி"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Condition"
+msgstr "நிலை"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Action"
+msgstr "செயல்"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "Edit / Complete"
+msgstr "திருத்து / முடி"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "No active conditions found."
+msgstr "செயலில் உள்ள நிலைகள் எதுவும் காணப்படவில்லை."
+
+#: records/templates/records/doctor_dashboard.html:61
+msgid "Upcoming Appointments"
+msgstr "வரவிருக்கும் சந்திப்புகள்"
+
+#: records/templates/records/doctor_dashboard.html:62
+msgid "View All"
+msgstr "அனைத்தையும் காண்க"
+
+#: records/templates/records/doctor_dashboard.html:78
+msgid "Scheduled"
+msgstr "திட்டமிடப்பட்டது"
+
+#: records/templates/records/doctor_dashboard.html:79
+#: records/templates/records/patient_dashboard.html:121
+msgid "Completed"
+msgstr "முடிந்தது"
+
+#: records/templates/records/doctor_dashboard.html:80
+msgid "Pending"
+msgstr "நிலுவையில்"
+
+#: records/templates/records/doctor_dashboard.html:81
+msgid "Cancelled"
+msgstr "ரத்து செய்யப்பட்டது"
+
+#: records/templates/records/doctor_dashboard.html:88
+msgid "No upcoming appointments."
+msgstr "வரவிருக்கும் சந்திப்புகள் எதுவும் இல்லை."
+
+#: records/templates/records/doctor_dashboard.html:99
+msgid "Go to Search Page"
+msgstr "தேடல் பக்கத்திற்குச் செல்லவும்"
+
+#: records/templates/records/doctor_profile.html:7
+msgid "Doctor Profile"
+msgstr "மருத்துவர் சுயவிவரம்"
+
+#: records/templates/records/doctor_profile.html:8
+msgid "Your professional and practice information."
+msgstr "உங்கள் தொழில்முறை மற்றும் பயிற்சித் தகவல்."
+
+#: records/templates/records/doctor_profile.html:11
+#: records/templates/records/patient_profile.html:11
+msgid "Edit Profile"
+msgstr "சுயவிவரத்தைத் திருத்து"
+
+#: records/templates/records/doctor_profile.html:22
+#, python-format
+msgid "Dr. %(doctor.name)s"
+msgstr "டாக்டர் %(doctor.name)s"
+
+#: records/templates/records/doctor_profile.html:35
+msgid "Gender"
+msgstr "பாலினம்"
+
+#: records/templates/records/doctor_profile.html:38
+#: records/templates/records/edit_patient_profile.html:15
+#: records/templates/records/patient_profile.html:31
+msgid "Date of Birth"
+msgstr "பிறந்த தேதி"
+
+#: records/templates/records/doctor_profile.html:41
+msgid "Phone"
+msgstr "தொலைபேசி"
+
+#: records/templates/records/doctor_profile.html:44
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: records/templates/records/doctor_profile.html:47
+msgid "Experience"
+msgstr "அனுபவம்"
+
+#: records/templates/records/doctor_profile.html:48
+#, python-format
+msgid "%(doctor.experience)s Years"
+msgstr "%(doctor.experience)s ஆண்டுகள்"
+
+#: records/templates/records/doctor_profile.html:50
+msgid "Registration No"
+msgstr "பதிவு எண்"
+
+#: records/templates/records/doctor_profile.html:53
+msgid "Current Affiliation"
+msgstr "தற்போதைய இணைப்பு"
+
+#: records/templates/records/doctor_profile.html:59
+msgid "Practice Information"
+msgstr "பயிற்சித் தகவல்"
+
+#: records/templates/records/doctor_profile.html:62
+msgid "Clinic Address"
+msgstr "மருத்துவமனை முகவரி"
+
+#: records/templates/records/doctor_profile.html:63
+msgid "Consultation Hours"
+msgstr "ஆலோசனை நேரம்"
+
+#: records/templates/records/doctor_profile.html:64
+msgid "Languages Spoken"
+msgstr "பேசும் மொழிகள்"
+
+#: records/templates/records/doctor_profile.html:65
+msgid "Consultation Modes"
+msgstr "ஆலோசனை முறைகள்"
+
+#: records/templates/records/doctor_profile.html:71
+msgid "Qualifications"
+msgstr "தகுதிகள்"
+
+#: records/templates/records/edit_patient_profile.html:5
+msgid "Edit My Profile"
+msgstr "என் சுயவிவரத்தைத் திருத்து"
+
+#: records/templates/records/edit_patient_profile.html:6
+msgid "Update your health and personal information."
+msgstr "உங்கள் சுகாதாரம் மற்றும் தனிப்பட்ட தகவல்களைப் புதுப்பிக்கவும்."
+
+#: records/templates/records/edit_patient_profile.html:13
+#: records/templates/records/patient_profile.html:30
+msgid "Personal Details"
+msgstr "தனிப்பட்ட விவரங்கள்"
+
+#: records/templates/records/edit_patient_profile.html:14
+msgid "Full Name"
+msgstr "முழுப் பெயர்"
+
+#: records/templates/records/edit_patient_profile.html:17
+#: records/templates/records/patient_profile.html:34
+msgid "Health Metrics"
+msgstr "சுகாதார அளவீடுகள்"
+
+#: records/templates/records/edit_patient_profile.html:18
+#: records/templates/records/patient_onboarding.html:19
+#: records/templates/records/patient_profile.html:35
+msgid "Blood Group"
+msgstr "இரத்த வகை"
+
+#: records/templates/records/edit_patient_profile.html:19
+msgid "Height (cm)"
+msgstr "உயரம் (செமீ)"
+
+#: records/templates/records/edit_patient_profile.html:20
+msgid "Weight (kg)"
+msgstr "எடை (கிலோ)"
+
+#: records/templates/records/edit_patient_profile.html:22
+#: records/templates/records/patient_onboarding.html:33
+#: records/templates/records/patient_profile.html:39
+msgid "Medical History"
+msgstr "மருத்துவ வரலாறு"
+
+#: records/templates/records/edit_patient_profile.html:23
+#: records/templates/records/patient_onboarding.html:34
+#: records/templates/records/patient_profile.html:40
+msgid "Allergies"
+msgstr "ஒவ்வாமைகள்"
+
+#: records/templates/records/edit_patient_profile.html:24
+#: records/templates/records/patient_onboarding.html:35
+#: records/templates/records/patient_profile.html:41
+msgid "Chronic Diseases"
+msgstr "நாள்பட்ட நோய்கள்"
+
+#: records/templates/records/edit_patient_profile.html:26
+msgid "Profile Picture"
+msgstr "சுயவிவரப் படம்"
+
+#: records/templates/records/edit_patient_profile.html:28
+msgid "Upload New Picture"
+msgstr "புதிய படத்தைப் பதிவேற்றவும்"
+
+#: records/templates/records/edit_patient_profile.html:31
+#, python-format
+msgid "Current: %(patient.profile_picture.name)s"
+msgstr "தற்போதையது: %(patient.profile_picture.name)s"
+
+#: records/templates/records/edit_patient_profile.html:35
+msgid "Save Changes"
+msgstr "மாற்றங்களைச் சேமி"
+
+#: records/templates/records/patient_dashboard.html:62
+#, python-format
+msgid "Welcome, %(patient_name)s!"
+msgstr "வருக, %(patient_name)s!"
+
+#: records/templates/records/patient_dashboard.html:63
+msgid "Here is your health summary and quick actions."
+msgstr "உங்கள் சுகாதாரச் சுருக்கம் மற்றும் விரைவான செயல்கள் இங்கே."
+
+#: records/templates/records/patient_dashboard.html:87
+msgid "New Consultation"
+msgstr "புதிய ஆலோசனை"
+
+#: records/templates/records/patient_dashboard.html:88
+msgid "Book a new appointment"
+msgstr "புதிய சந்திப்பை முன்பதிவு செய்யுங்கள்"
+
+#: records/templates/records/patient_dashboard.html:94
+msgid "AI Diet Advisor"
+msgstr "AI உணவு ஆலோசகர்"
+
+#: records/templates/records/patient_dashboard.html:95
+msgid "Get personalized diet tips"
+msgstr "தனிப்பயனாக்கப்பட்ட உணவு ஆலோசனைகளைப் பெறுங்கள்"
+
+#: records/templates/records/patient_dashboard.html:101
+msgid "Ingredient Scanner"
+msgstr "மூலப்பொருள் ஸ்கேனர்"
+
+#: records/templates/records/patient_dashboard.html:102
+msgid "Check product safety"
+msgstr "தயாரிப்பு பாதுகாப்பைச் சரிபார்க்கவும்"
+
+#: records/templates/records/patient_dashboard.html:111
+msgid "Your Health Conditions"
+msgstr "உங்கள் சுகாதார நிலைகள்"
+
+#: records/templates/records/patient_dashboard.html:118
+msgid "Since"
+msgstr "இருந்து"
+
+#: records/templates/records/patient_dashboard.html:123
+msgid "Active"
+msgstr "செயலில்"
+
+#: records/templates/records/patient_dashboard.html:128
+msgid "You have no health conditions recorded."
+msgstr "உங்களுக்கு சுகாதார நிலைகள் எதுவும் பதிவு செய்யப்படவில்லை."
+
+#: records/templates/records/patient_dashboard.html:138
+msgid "Your Medical History"
+msgstr "உங்கள் மருத்துவ வரலாறு"
+
+#: records/templates/records/patient_dashboard.html:143
+#, python-format
+msgid "Date: %(record_date)s with <strong>Dr. %(doctor_name)s</strong>"
+msgstr "தேதி: %(record_date)s, <strong>டாக்டர் %(doctor_name)s</strong> உடன்"
+
+#: records/templates/records/patient_dashboard.html:150
+msgid "You have no medical records found."
+msgstr "உங்கள் மருத்துவப் பதிவுகள் எதுவும் காணப்படவில்லை."
+
+#: records/templates/records/patient_dashboard.html:159
+msgid "AI Health Assistant"
+msgstr "AI சுகாதார உதவியாளர்"
+
+#: records/templates/records/patient_dashboard.html:163
+#, python-format
+msgid "Hello %(patient_name)s, how can I help you today?"
+msgstr "வணக்கம் %(patient_name)s, இன்று நான் உங்களுக்கு எப்படி உதவ முடியும்?"
+
+#: records/templates/records/patient_dashboard.html:168
+msgid "Ask your question here..."
+msgstr "உங்கள் கேள்வியை இங்கே கேட்கவும்..."
+
+#: records/templates/records/patient_dashboard.html:169
+msgid "Send"
+msgstr "அனுப்பு"
+
+#: records/templates/records/patient_onboarding.html:12
+msgid "Welcome to AyushCare!"
+msgstr "ஆயுஷ்கேருக்கு வரவேற்கிறோம்!"
+
+#: records/templates/records/patient_onboarding.html:13
+msgid "Let's set up your health profile. (Step 1 of 2)"
+msgstr "உங்கள் சுகாதார சுயவிவரத்தை அமைப்போம். (படி 1 / 2)"
+
+#: records/templates/records/patient_onboarding.html:18
+msgid "Basic Information"
+msgstr "அடிப்படைத் தகவல்"
+
+#: records/templates/records/patient_onboarding.html:19
+msgid "e.g., O+"
+msgstr "எ.கா., O+"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "Height (in cm)"
+msgstr "உயரம் (செமீ இல்)"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "e.g., 175"
+msgstr "எ.கா., 175"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "Weight (in kg)"
+msgstr "எடை (கிலோ இல்)"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "e.g., 70"
+msgstr "எ.கா., 70"
+
+#: records/templates/records/patient_onboarding.html:22
+msgid "Next Step"
+msgstr "அடுத்த படி"
+
+#: records/templates/records/patient_onboarding.html:27
+msgid "Almost Done!"
+msgstr "கிட்டத்தட்ட முடிந்தது!"
+
+#: records/templates/records/patient_onboarding.html:28
+msgid "Just a little more about your medical history. (Step 2 of 2)"
+msgstr "உங்கள் மருத்துவ வரலாறு பற்றி இன்னும் கொஞ்சம். (படி 2 / 2)"
+
+#: records/templates/records/patient_onboarding.html:34
+msgid "e.g., Peanuts, Pollen, Dust"
+msgstr "எ.கா., வேர்க்கடலை, மகரந்தம், தூசி"
+
+#: records/templates/records/patient_onboarding.html:35
+msgid "e.g., Diabetes, Hypertension, Asthma"
+msgstr "எ.கா., நீரிழிவு, உயர் இரத்த அழுத்தம், ஆஸ்துமா"
+
+#: records/templates/records/patient_onboarding.html:36
+msgid "Finish & Go to My Profile"
+msgstr "முடித்து என் சுயவிவரத்திற்குச் செல்லவும்"
+
+#: records/templates/records/patient_profile.html:7
+msgid "My Health Profile"
+msgstr "என் சுகாதார சுயவிவரம்"
+
+#: records/templates/records/patient_profile.html:8
+msgid "Your complete health and personal information."
+msgstr "உங்கள் முழுமையான சுகாதாரம் மற்றும் தனிப்பட்ட தகவல்."
+
+#: records/templates/records/patient_profile.html:32
+msgid "Aadhar"
+msgstr "ஆதார்"
+
+#: records/templates/records/patient_profile.html:36
+msgid "Height"
+msgstr "உயரம்"
+
+#: records/templates/records/patient_profile.html:36
+#, python-format
+msgid "%(patient.height|default:0)s cm"
+msgstr "%(patient.height|default:0)s செமீ"
+
+#: records/templates/records/patient_profile.html:37
+msgid "Weight"
+msgstr "எடை"
+
+#: records/templates/records/patient_profile.html:37
+#, python-format
+msgid "%(patient.weight|default:0)s kg"
+msgstr "%(patient.weight|default:0)s கிலோ"
+
+#: records/templates/records/patient_profile.html:40
+#: records/templates/records/patient_profile.html:41
+msgid "None specified"
+msgstr "குறிப்பிடப்படவில்லை"
+
+#: records/templates/records/records.html:31
+msgid "My Complete Medical Records"
+msgstr "என் முழுமையான மருத்துவப் பதிவுகள்"
+
+#: records/templates/records/records.html:32
+msgid "A detailed history of all your consultations."
+msgstr "உங்கள் அனைத்து ஆலோசனைகளின் விரிவான வரலாறு."
+
+#: records/templates/records/records.html:41
+msgid "Date"
+msgstr "தேதி"
+
+#: records/templates/records/records.html:42
+msgid "Doctor"
+msgstr "மருத்துவர்"
+
+#: records/templates/records/records.html:47
+msgid "Report"
+msgstr "அறிக்கை"
+
+#: records/templates/records/records.html:62
+msgid "View"
+msgstr "காண்க"
+
+#: records/templates/records/records.html:65
+msgid "No File"
+msgstr "கோப்பு இல்லை"
+
+#: records/templates/records/records.html:71
+msgid "You have no medical records yet."
+msgstr "உங்களுக்கு இன்னும் மருத்துவப் பதிவுகள் எதுவும் இல்லை."

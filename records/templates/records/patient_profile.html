@@ -1,0 +1,46 @@
+{% extends 'records/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="page-header d-flex justify-content-between align-items-center">
+    <div>
+        <h2>{% translate "My Health Profile" %}</h2>
+        <p class="mb-0">{% translate "Your complete health and personal information." %}</p>
+    </div>
+    <a href="{% url 'edit_patient_profile' %}" class="btn btn-outline-primary">
+        <i class="fas fa-edit me-1"></i> {% translate "Edit Profile" %}
+    </a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                {% if patient.profile_picture %}
+                    <img src="{{ patient.profile_picture.url }}" alt="{{ patient.name }}" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                {% else %}
+                    <div class="rounded-circle mb-3 bg-light d-flex justify-content-center align-items-center" style="width: 150px; height: 150px;">
+                        <i class="fas fa-user fa-3x text-muted"></i>
+                    </div>
+                {% endif %}
+                <h4>{{ patient.name }}</h4>
+                <p class="text-muted">{{ patient.email }}</p>
+            </div>
+            <div class="col-md-9">
+                <h5>{% translate "Personal Details" %}</h5><hr>
+                <p><strong>{% translate "Date of Birth" %}:</strong> {{ patient.date_of_birth|date:"d M Y" }}</p>
+                <p><strong>{% translate "Aadhar" %}:</strong> {{ patient.aadhar_number }}</p>
+
+                <h5 class="mt-4">{% translate "Health Metrics" %}</h5><hr>
+                <p><strong>{% translate "Blood Group" %}:</strong> {{ patient.blood_group|default_if_none:"" }}</p>
+                <p><strong>{% translate "Height" %}:</strong> {% blocktranslate %}{{ patient.height|default:0 }} cm{% endblocktranslate %}</p>
+                <p><strong>{% translate "Weight" %}:</strong> {% blocktranslate %}{{ patient.weight|default:0 }} kg{% endblocktranslate %}</p>
+
+                <h5 class="mt-4">{% translate "Medical History" %}</h5><hr>
+                <p><strong>{% translate "Allergies" %}:</strong> {{ patient.allergies|default_if_none:_("None specified") }}</p>
+                <p><strong>{% translate "Chronic Diseases" %}:</strong> {{ patient.chronic_diseases|default_if_none:_("None specified") }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,620 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-05 09:56+0530\n"
+"PO-Revision-Date: 2025-10-05 12:07+0530\n"
+"Last-Translator: FULL NAME EMAIL@ADDRESS\n"
+"Language-Team: Telugu LL@li.org\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hospital_project/settings.py:45
+msgid "English"
+msgstr "ఆంగ్లం"
+
+#: hospital_project/settings.py:46
+msgid "Hindi"
+msgstr "హిందీ"
+
+#: hospital_project/settings.py:47
+msgid "Marathi"
+msgstr "మరాఠీ"
+
+#: hospital_project/settings.py:48
+msgid "Gujarati"
+msgstr "గుజరాతీ"
+
+#: hospital_project/settings.py:49
+msgid "Bengali"
+msgstr "బెంగాలీ"
+
+#: hospital_project/settings.py:50
+msgid "Tamil"
+msgstr "తమిళం"
+
+#: hospital_project/settings.py:51
+msgid "Telugu"
+msgstr "తెలుగు"
+
+#: hospital_project/settings.py:52
+msgid "Kannada"
+msgstr "కన్నడ"
+
+#: hospital_project/settings.py:53
+msgid "Malayalam"
+msgstr "మలయాళం"
+
+#: hospital_project/settings.py:54
+msgid "Odia"
+msgstr "ఒడియా"
+
+#: hospital_project/settings.py:55
+msgid "Urdu"
+msgstr "ఉర్దూ"
+
+#: records/templates/records/add_record_form.html:7
+msgid "Add New Medical Record"
+msgstr "కొత్త వైద్య రికార్డును జోడించండి"
+
+#: records/templates/records/add_record_form.html:9
+#, python-format
+msgid "You are adding a new record for: <strong>%(patient.name)s</strong>"
+msgstr "మీరు వీరి కోసం కొత్త రికార్డును జోడిస్తున్నారు: <strong>%(patient.name)s</strong>"
+
+#: records/templates/records/add_record_form.html:19
+#: records/templates/records/doctor_dashboard.html:30
+#: records/templates/records/records.html:43
+msgid "Symptoms"
+msgstr "లక్షణాలు"
+
+#: records/templates/records/add_record_form.html:23
+#: records/templates/records/doctor_dashboard.html:31
+#: records/templates/records/patient_dashboard.html:146
+#: records/templates/records/records.html:44
+msgid "Diagnosis"
+msgstr "రోగ నిర్ధారణ"
+
+#: records/templates/records/add_record_form.html:27
+#: records/templates/records/doctor_dashboard.html:32
+#: records/templates/records/records.html:45
+msgid "Prescription"
+msgstr "మందుల చీటీ"
+
+#: records/templates/records/add_record_form.html:31
+#: records/templates/records/doctor_dashboard.html:33
+#: records/templates/records/records.html:46
+msgid "Dose"
+msgstr "మోతాదు"
+
+#: records/templates/records/add_record_form.html:35
+msgid "Health Report (Optional)"
+msgstr "ఆరోగ్య నివేదిక (ఐచ్ఛికం)"
+
+#: records/templates/records/add_record_form.html:38
+#: records/templates/records/doctor_dashboard.html:35
+msgid "Save Record"
+msgstr "రికార్డును సేవ్ చేయండి"
+
+#: records/templates/records/add_record_form.html:39
+#: records/templates/records/edit_patient_profile.html:36
+msgid "Cancel"
+msgstr "రద్దు చేయండి"
+
+#: records/templates/records/base.html:9
+#: records/templates/records/base.html:275
+msgid "AyushCare"
+msgstr "ఆయుష్‌కేర్"
+
+#: records/templates/records/base.html:281
+#: records/templates/records/base.html:309
+msgid "Dashboard"
+msgstr "డాష్‌బోర్డ్"
+
+#: records/templates/records/base.html:286
+#: records/templates/records/base.html:314
+msgid "Appointments"
+msgstr "అపాయింట్‌మెంట్లు"
+
+#: records/templates/records/base.html:291
+#: records/templates/records/doctor_dashboard.html:98
+msgid "Search Patient"
+msgstr "రోగిని శోధించండి"
+
+#: records/templates/records/base.html:297
+msgid "Manage Conditions"
+msgstr "పరిస్థితులను నిర్వహించండి"
+
+#: records/templates/records/base.html:303
+#: records/templates/records/base.html:325
+msgid "My Profile"
+msgstr "నా ప్రొఫైల్"
+
+#: records/templates/records/base.html:319
+msgid "My Records"
+msgstr "నా రికార్డులు"
+
+#: records/templates/records/base.html:332
+msgid "Logout"
+msgstr "లాగ్ అవుట్"
+
+#: records/templates/records/doctor_appointments.html:6
+msgid "My Appointments"
+msgstr "నా అపాయింట్‌మెంట్లు"
+
+#: records/templates/records/doctor_appointments.html:7
+msgid "A complete list of all scheduled appointments."
+msgstr "షెడ్యూల్ చేయబడిన అన్ని అపాయింట్‌మెంట్ల పూర్తి జాబితా."
+
+#: records/templates/records/doctor_appointments.html:16
+#: records/templates/records/doctor_dashboard.html:29
+#: records/templates/records/doctor_dashboard.html:41
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Patient"
+msgstr "రోగి"
+
+#: records/templates/records/doctor_appointments.html:17
+msgid "Date & Time"
+msgstr "తేదీ & సమయం"
+
+#: records/templates/records/doctor_appointments.html:18
+msgid "Mode"
+msgstr "విధానం"
+
+#: records/templates/records/doctor_appointments.html:19
+msgid "Reason"
+msgstr "కారణం"
+
+#: records/templates/records/doctor_appointments.html:20
+msgid "Status"
+msgstr "స్థితి"
+
+#: records/templates/records/doctor_appointments.html:21
+msgid "Actions"
+msgstr "చర్యలు"
+
+#: records/templates/records/doctor_appointments.html:51
+msgid "Update"
+msgstr "అప్‌డేట్ చేయండి"
+
+#: records/templates/records/doctor_appointments.html:57
+msgid "You have no appointments."
+msgstr "మీకు అపాయింట్‌మెంట్లు లేవు."
+
+#: records/templates/records/doctor_dashboard.html:6
+#, python-format
+msgid "Welcome, Dr. %(doctor_name)s!"
+msgstr "స్వాగతం, డా. %(doctor_name)s!"
+
+#: records/templates/records/doctor_dashboard.html:9
+msgid "Here is your control center."
+msgstr "ఇది మీ నియంత్రణ కేంద్రం."
+
+#: records/templates/records/doctor_dashboard.html:19
+msgid "Add Medical Record"
+msgstr "వైద్య రికార్డును జోడించండి"
+
+#: records/templates/records/doctor_dashboard.html:20
+#: records/templates/records/doctor_dashboard.html:44
+msgid "Add Condition"
+msgstr "పరిస్థితిని జోడించండి"
+
+#: records/templates/records/doctor_dashboard.html:21
+msgid "View Active Conditions"
+msgstr "క్రియాశీల పరిస్థితులను వీక్షించండి"
+
+#: records/templates/records/doctor_dashboard.html:34
+msgid "Health Report"
+msgstr "ఆరోగ్య నివేదిక"
+
+#: records/templates/records/doctor_dashboard.html:42
+msgid "Condition Name"
+msgstr "పరిస్థితి పేరు"
+
+#: records/templates/records/doctor_dashboard.html:43
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Start Date"
+msgstr "ప్రారంభ తేదీ"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Condition"
+msgstr "పరిస్థితి"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Action"
+msgstr "చర్య"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "Edit / Complete"
+msgstr "సవరించు / పూర్తి చేయి"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "No active conditions found."
+msgstr "క్రియాశీల పరిస్థితులు ఏవీ కనుగొనబడలేదు."
+
+#: records/templates/records/doctor_dashboard.html:61
+msgid "Upcoming Appointments"
+msgstr "రాబోయే అపాయింట్‌మెంట్లు"
+
+#: records/templates/records/doctor_dashboard.html:62
+msgid "View All"
+msgstr "అన్నీ చూడండి"
+
+#: records/templates/records/doctor_dashboard.html:78
+msgid "Scheduled"
+msgstr "షెడ్యూల్ చేయబడింది"
+
+#: records/templates/records/doctor_dashboard.html:79
+#: records/templates/records/patient_dashboard.html:121
+msgid "Completed"
+msgstr "పూర్తయింది"
+
+#: records/templates/records/doctor_dashboard.html:80
+msgid "Pending"
+msgstr "పెండింగ్‌లో ఉంది"
+
+#: records/templates/records/doctor_dashboard.html:81
+msgid "Cancelled"
+msgstr "రద్దు చేయబడింది"
+
+#: records/templates/records/doctor_dashboard.html:88
+msgid "No upcoming appointments."
+msgstr "రాబోయే అపాయింట్‌మెంట్లు లేవు."
+
+#: records/templates/records/doctor_dashboard.html:99
+msgid "Go to Search Page"
+msgstr "శోధన పేజీకి వెళ్లండి"
+
+#: records/templates/records/doctor_profile.html:7
+msgid "Doctor Profile"
+msgstr "డాక్టర్ ప్రొఫైల్"
+
+#: records/templates/records/doctor_profile.html:8
+msgid "Your professional and practice information."
+msgstr "మీ వృత్తిపరమైన మరియు ప్రాక్టీస్ సమాచారం."
+
+#: records/templates/records/doctor_profile.html:11
+#: records/templates/records/patient_profile.html:11
+msgid "Edit Profile"
+msgstr "ప్రొఫైల్‌ను సవరించండి"
+
+#: records/templates/records/doctor_profile.html:22
+#, python-format
+msgid "Dr. %(doctor.name)s"
+msgstr "డా. %(doctor.name)s"
+
+#: records/templates/records/doctor_profile.html:35
+msgid "Gender"
+msgstr "లింగం"
+
+#: records/templates/records/doctor_profile.html:38
+#: records/templates/records/edit_patient_profile.html:15
+#: records/templates/records/patient_profile.html:31
+msgid "Date of Birth"
+msgstr "పుట్టిన తేది"
+
+#: records/templates/records/doctor_profile.html:41
+msgid "Phone"
+msgstr "ఫోన్"
+
+#: records/templates/records/doctor_profile.html:44
+msgid "Email"
+msgstr "ఇమెయిల్"
+
+#: records/templates/records/doctor_profile.html:47
+msgid "Experience"
+msgstr "అనుభవం"
+
+#: records/templates/records/doctor_profile.html:48
+#, python-format
+msgid "%(doctor.experience)s Years"
+msgstr "%(doctor.experience)s సంవత్సరాలు"
+
+#: records/templates/records/doctor_profile.html:50
+msgid "Registration No"
+msgstr "రిజిస్ట్రేషన్ నెం"
+
+#: records/templates/records/doctor_profile.html:53
+msgid "Current Affiliation"
+msgstr "ప్రస్తుత అనుబంధం"
+
+#: records/templates/records/doctor_profile.html:59
+msgid "Practice Information"
+msgstr "ప్రాక్టీస్ సమాచారం"
+
+#: records/templates/records/doctor_profile.html:62
+msgid "Clinic Address"
+msgstr "క్లినిక్ చిరునామా"
+
+#: records/templates/records/doctor_profile.html:63
+msgid "Consultation Hours"
+msgstr "సంప్రదింపుల గంటలు"
+
+#: records/templates/records/doctor_profile.html:64
+msgid "Languages Spoken"
+msgstr "మాట్లాడే భాషలు"
+
+#: records/templates/records/doctor_profile.html:65
+msgid "Consultation Modes"
+msgstr "సంప్రదింపుల పద్ధతులు"
+
+#: records/templates/records/doctor_profile.html:71
+msgid "Qualifications"
+msgstr "అర్హతలు"
+
+#: records/templates/records/edit_patient_profile.html:5
+msgid "Edit My Profile"
+msgstr "నా ప్రొఫైల్‌ను సవరించండి"
+
+#: records/templates/records/edit_patient_profile.html:6
+msgid "Update your health and personal information."
+msgstr "మీ ఆరోగ్యం మరియు వ్యక్తిగత సమాచారాన్ని నవీకరించండి."
+
+#: records/templates/records/edit_patient_profile.html:13
+#: records/templates/records/patient_profile.html:30
+msgid "Personal Details"
+msgstr "వ్యక్తిగత వివరాలు"
+
+#: records/templates/records/edit_patient_profile.html:14
+msgid "Full Name"
+msgstr "పూర్తి పేరు"
+
+#: records/templates/records/edit_patient_profile.html:17
+#: records/templates/records/patient_profile.html:34
+msgid "Health Metrics"
+msgstr "ఆరోగ్య కొలమానాలు"
+
+#: records/templates/records/edit_patient_profile.html:18
+#: records/templates/records/patient_onboarding.html:19
+#: records/templates/records/patient_profile.html:35
+msgid "Blood Group"
+msgstr "రక్తపు గ్రూపు"
+
+#: records/templates/records/edit_patient_profile.html:19
+msgid "Height (cm)"
+msgstr "ఎత్తు (సెం.మీ)"
+
+#: records/templates/records/edit_patient_profile.html:20
+msgid "Weight (kg)"
+msgstr "బరువు (కిలోలు)"
+
+#: records/templates/records/edit_patient_profile.html:22
+#: records/templates/records/patient_onboarding.html:33
+#: records/templates/records/patient_profile.html:39
+msgid "Medical History"
+msgstr "వైద్య చరిత్ర"
+
+#: records/templates/records/edit_patient_profile.html:23
+#: records/templates/records/patient_onboarding.html:34
+#: records/templates/records/patient_profile.html:40
+msgid "Allergies"
+msgstr "అలర్జీలు"
+
+#: records/templates/records/edit_patient_profile.html:24
+#: records/templates/records/patient_onboarding.html:35
+#: records/templates/records/patient_profile.html:41
+msgid "Chronic Diseases"
+msgstr "దీర్ఘకాలిక వ్యాధులు"
+
+#: records/templates/records/edit_patient_profile.html:26
+msgid "Profile Picture"
+msgstr "ప్రొఫైల్ చిత్రం"
+
+#: records/templates/records/edit_patient_profile.html:28
+msgid "Upload New Picture"
+msgstr "కొత్త చిత్రాన్ని అప్‌లోడ్ చేయండి"
+
+#: records/templates/records/edit_patient_profile.html:31
+#, python-format
+msgid "Current: %(patient.profile_picture.name)s"
+msgstr "ప్రస్తుతం: %(patient.profile_picture.name)s"
+
+#: records/templates/records/edit_patient_profile.html:35
+msgid "Save Changes"
+msgstr "మార్పులను సేవ్ చేయండి"
+
+#: records/templates/records/patient_dashboard.html:62
+#, python-format
+msgid "Welcome, %(patient_name)s!"
+msgstr "స్వాగతం, %(patient_name)s!"
+
+#: records/templates/records/patient_dashboard.html:63
+msgid "Here is your health summary and quick actions."
+msgstr "ఇక్కడ మీ ఆరోగ్య సారాంశం మరియు త్వరిత చర్యలు ఉన్నాయి."
+
+#: records/templates/records/patient_dashboard.html:87
+msgid "New Consultation"
+msgstr "కొత్త సంప్రదింపులు"
+
+#: records/templates/records/patient_dashboard.html:88
+msgid "Book a new appointment"
+msgstr "కొత్త అపాయింట్‌మెంట్‌ను బుక్ చేయండి"
+
+#: records/templates/records/patient_dashboard.html:94
+msgid "AI Diet Advisor"
+msgstr "AI ఆహార సలహాదారు"
+
+#: records/templates/records/patient_dashboard.html:95
+msgid "Get personalized diet tips"
+msgstr "వ్యక్తిగతీకరించిన ఆహార చిట్కాలను పొందండి"
+
+#: records/templates/records/patient_dashboard.html:101
+msgid "Ingredient Scanner"
+msgstr "పదార్థాల స్కానర్"
+
+#: records/templates/records/patient_dashboard.html:102
+msgid "Check product safety"
+msgstr "ఉత్పత్తి భద్రతను తనిఖీ చేయండి"
+
+#: records/templates/records/patient_dashboard.html:111
+msgid "Your Health Conditions"
+msgstr "మీ ఆరోగ్య పరిస్థితులు"
+
+#: records/templates/records/patient_dashboard.html:118
+msgid "Since"
+msgstr "నుండి"
+
+#: records/templates/records/patient_dashboard.html:123
+msgid "Active"
+msgstr "క్రియాశీలం"
+
+#: records/templates/records/patient_dashboard.html:128
+msgid "You have no health conditions recorded."
+msgstr "మీకు ఆరోగ్య పరిస్థితులు ఏవీ నమోదు చేయబడలేదు."
+
+#: records/templates/records/patient_dashboard.html:138
+msgid "Your Medical History"
+msgstr "మీ వైద్య చరిత్ర"
+
+#: records/templates/records/patient_dashboard.html:143
+#, python-format
+msgid "Date: %(record_date)s with <strong>Dr. %(doctor_name)s</strong>"
+msgstr "తేదీ: %(record_date)s, <strong>డా. %(doctor_name)s</strong> తో"
+
+#: records/templates/records/patient_dashboard.html:150
+msgid "You have no medical records found."
+msgstr "మీకు వైద్య రికార్డులు ఏవీ కనుగొనబడలేదు."
+
+#: records/templates/records/patient_dashboard.html:159
+msgid "AI Health Assistant"
+msgstr "AI ఆరోగ్య సహాయకుడు"
+
+#: records/templates/records/patient_dashboard.html:163
+#, python-format
+msgid "Hello %(patient_name)s, how can I help you today?"
+msgstr "నమస్కారం %(patient_name)s, ఈ రోజు నేను మీకు ఎలా సహాయపడగలను?"
+
+#: records/templates/records/patient_dashboard.html:168
+msgid "Ask your question here..."
+msgstr "మీ ప్రశ్నను ఇక్కడ అడగండి..."
+
+#: records/templates/records/patient_dashboard.html:169
+msgid "Send"
+msgstr "పంపండి"
+
+#: records/templates/records/patient_onboarding.html:12
+msgid "Welcome to AyushCare!"
+msgstr "ఆయుష్‌కేర్‌కు స్వాగతం!"
+
+#: records/templates/records/patient_onboarding.html:13
+msgid "Let's set up your health profile. (Step 1 of 2)"
+msgstr "మీ ఆరోగ్య ప్రొఫైల్‌ను సెటప్ చేద్దాం. (దశ 1/2)"
+
+#: records/templates/records/patient_onboarding.html:18
+msgid "Basic Information"
+msgstr "ప్రాథమిక సమాచారం"
+
+#: records/templates/records/patient_onboarding.html:19
+msgid "e.g., O+"
+msgstr "ఉదా., O+"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "Height (in cm)"
+msgstr "ఎత్తు (సెం.మీ లో)"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "e.g., 175"
+msgstr "ఉదా., 175"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "Weight (in kg)"
+msgstr "బరువు (కిలోలలో)"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "e.g., 70"
+msgstr "ఉదా., 70"
+
+#: records/templates/records/patient_onboarding.html:22
+msgid "Next Step"
+msgstr "తదుపరి దశ"
+
+#: records/templates/records/patient_onboarding.html:27
+msgid "Almost Done!"
+msgstr "దాదాపు పూర్తయింది!"
+
+#: records/templates/records/patient_onboarding.html:28
+msgid "Just a little more about your medical history. (Step 2 of 2)"
+msgstr "మీ వైద్య చరిత్ర గురించి కొంచెం ఎక్కువ. (దశ 2/2)"
+
+#: records/templates/records/patient_onboarding.html:34
+msgid "e.g., Peanuts, Pollen, Dust"
+msgstr "ఉదా., వేరుశెనగ, పుప్పొడి, దుమ్ము"
+
+#: records/templates/records/patient_onboarding.html:35
+msgid "e.g., Diabetes, Hypertension, Asthma"
+msgstr "ఉదా., మధుమేహం, అధిక రక్తపోటు, ఆస్తమా"
+
+#: records/templates/records/patient_onboarding.html:36
+msgid "Finish & Go to My Profile"
+msgstr "ముగించి నా ప్రొఫైల్‌కు వెళ్లండి"
+
+#: records/templates/records/patient_profile.html:7
+msgid "My Health Profile"
+msgstr "నా ఆరోగ్య ప్రొఫైల్"
+
+#: records/templates/records/patient_profile.html:8
+msgid "Your complete health and personal information."
+msgstr "మీ పూర్తి ఆరోగ్యం మరియు వ్యక్తిగత సమాచారం."
+
+#: records/templates/records/patient_profile.html:32
+msgid "Aadhar"
+msgstr "ఆధార్"
+
+#: records/templates/records/patient_profile.html:36
+msgid "Height"
+msgstr "ఎత్తు"
+
+#: records/templates/records/patient_profile.html:36
+#, python-format
+msgid "%(patient.height|default:0)s cm"
+msgstr "%(patient.height|default:0)s సెం.మీ"
+
+#: records/templates/records/patient_profile.html:37
+msgid "Weight"
+msgstr "బరువు"
+
+#: records/templates/records/patient_profile.html:37
+#, python-format
+msgid "%(patient.weight|default:0)s kg"
+msgstr "%(patient.weight|default:0)s కిలోలు"
+
+#: records/templates/records/patient_profile.html:40
+#: records/templates/records/patient_profile.html:41
+msgid "None specified"
+msgstr "ఏదీ పేర్కొనబడలేదు"
+
+#: records/templates/records/records.html:31
+msgid "My Complete Medical Records"
+msgstr "నా పూర్తి వైద్య రికార్డులు"
+
+#: records/templates/records/records.html:32
+msgid "A detailed history of all your consultations."
+msgstr "మీ అన్ని సంప్రదింపుల యొక్క వివరణాత్మక చరిత్ర."
+
+#: records/templates/records/records.html:41
+msgid "Date"
+msgstr "తేదీ"
+
+#: records/templates/records/records.html:42
+msgid "Doctor"
+msgstr "డాక్టర్"
+
+#: records/templates/records/records.html:47
+msgid "Report"
+msgstr "నివేదిక"
+
+#: records/templates/records/records.html:62
+msgid "View"
+msgstr "చూడండి"
+
+#: records/templates/records/records.html:65
+msgid "No File"
+msgstr "ఫైల్ లేదు"
+
+#: records/templates/records/records.html:71
+msgid "You have no medical records yet."
+msgstr "మీకు ఇంకా వైద్య రికార్డులు ఏవీ లేవు."

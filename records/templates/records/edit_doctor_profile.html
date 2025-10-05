@@ -1,0 +1,41 @@
+{% extends 'records/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="page-header">
+    <h2>Edit Profile</h2>
+    <p>Update your professional information.</p>
+</div>
+<div class="card">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3"><label class="form-label">Full Name:</label><input type="text" name="name" class="form-control" value="{{ doctor.name }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Gender:</label><input type="text" name="gender" class="form-control" value="{{ doctor.gender|default:'' }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Date of Birth:</label><input type="date" name="date_of_birth" class="form-control" value="{{ doctor.date_of_birth|date:'Y-m-d' }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Phone:</label><input type="text" name="phone" class="form-control" value="{{ doctor.phone|default:'' }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Experience (Years):</label><input type="number" name="experience" class="form-control" value="{{ doctor.experience|default:'' }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Registration No:</label><input type="text" name="registration_no" class="form-control" value="{{ doctor.registration_no|default:'' }}"></div>
+                <div class="col-md-12 mb-3"><label class="form-label">Current Affiliation:</label><input type="text" name="affiliation" class="form-control" value="{{ doctor.affiliation|default:'' }}"></div>
+                <hr>
+                <div class="col-md-12 mb-3"><label class="form-label">Clinic Address:</label><textarea name="clinic_address" class="form-control">{{ doctor.clinic_address|default:'' }}</textarea></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Consultation Hours:</label><input type="text" name="consultation_hours" class="form-control" value="{{ doctor.consultation_hours|default:'' }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Languages Spoken:</label><input type="text" name="languages_spoken" class="form-control" value="{{ doctor.languages_spoken|default:'' }}"></div>
+                <div class="col-md-6 mb-3"><label class="form-label">Consultation Modes:</label><input type="text" name="consultation_modes" class="form-control" value="{{ doctor.consultation_modes|default:'' }}"></div>
+                <div class="col-md-12 mb-3"><label class="form-label">Qualifications (one per line):</label><textarea name="qualifications" class="form-control" rows="4">{{ doctor.qualifications|default:'' }}</textarea></div>
+                <hr>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Profile Picture:</label>
+                    <input type="file" name="profile_picture" class="form-control" accept="image/*">
+                    {% if doctor.profile_picture %}
+                        <small class="text-muted">Current: {{ doctor.profile_picture.name }}</small>
+                    {% endif %}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'doctor_profile' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

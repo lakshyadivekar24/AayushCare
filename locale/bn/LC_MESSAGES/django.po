@@ -1,0 +1,620 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-05 09:56+0530\n"
+"PO-Revision-Date: 2025-10-05 12:14+0530\n"
+"Last-Translator: FULL NAME EMAIL@ADDRESS\n"
+"Language-Team: Bengali LL@li.org\n"
+"Language: bn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: hospital_project/settings.py:45
+msgid "English"
+msgstr "ইংরেজি"
+
+#: hospital_project/settings.py:46
+msgid "Hindi"
+msgstr "হিন্দি"
+
+#: hospital_project/settings.py:47
+msgid "Marathi"
+msgstr "মারাঠি"
+
+#: hospital_project/settings.py:48
+msgid "Gujarati"
+msgstr "গুজরাটি"
+
+#: hospital_project/settings.py:49
+msgid "Bengali"
+msgstr "বাংলা"
+
+#: hospital_project/settings.py:50
+msgid "Tamil"
+msgstr "তামিল"
+
+#: hospital_project/settings.py:51
+msgid "Telugu"
+msgstr "তেলুগু"
+
+#: hospital_project/settings.py:52
+msgid "Kannada"
+msgstr "কন্নড়"
+
+#: hospital_project/settings.py:53
+msgid "Malayalam"
+msgstr "মালায়ালাম"
+
+#: hospital_project/settings.py:54
+msgid "Odia"
+msgstr "ওড়িয়া"
+
+#: hospital_project/settings.py:55
+msgid "Urdu"
+msgstr "উর্দু"
+
+#: records/templates/records/add_record_form.html:7
+msgid "Add New Medical Record"
+msgstr "নতুন মেডিকেল রেকর্ড যোগ করুন"
+
+#: records/templates/records/add_record_form.html:9
+#, python-format
+msgid "You are adding a new record for: <strong>%(patient.name)s</strong>"
+msgstr "আপনি এর জন্য একটি নতুন রেকর্ড যোগ করছেন: <strong>%(patient.name)s</strong>"
+
+#: records/templates/records/add_record_form.html:19
+#: records/templates/records/doctor_dashboard.html:30
+#: records/templates/records/records.html:43
+msgid "Symptoms"
+msgstr "লক্ষণ"
+
+#: records/templates/records/add_record_form.html:23
+#: records/templates/records/doctor_dashboard.html:31
+#: records/templates/records/patient_dashboard.html:146
+#: records/templates/records/records.html:44
+msgid "Diagnosis"
+msgstr "রোগ নির্ণয়"
+
+#: records/templates/records/add_record_form.html:27
+#: records/templates/records/doctor_dashboard.html:32
+#: records/templates/records/records.html:45
+msgid "Prescription"
+msgstr "প্রেসক্রিপশন"
+
+#: records/templates/records/add_record_form.html:31
+#: records/templates/records/doctor_dashboard.html:33
+#: records/templates/records/records.html:46
+msgid "Dose"
+msgstr "ডোজ"
+
+#: records/templates/records/add_record_form.html:35
+msgid "Health Report (Optional)"
+msgstr "স্বাস্থ্য প্রতিবেদন (ঐচ্ছিক)"
+
+#: records/templates/records/add_record_form.html:38
+#: records/templates/records/doctor_dashboard.html:35
+msgid "Save Record"
+msgstr "রেকর্ড সংরক্ষণ করুন"
+
+#: records/templates/records/add_record_form.html:39
+#: records/templates/records/edit_patient_profile.html:36
+msgid "Cancel"
+msgstr "বাতিল করুন"
+
+#: records/templates/records/base.html:9
+#: records/templates/records/base.html:275
+msgid "AyushCare"
+msgstr "আয়ুশকেয়ার"
+
+#: records/templates/records/base.html:281
+#: records/templates/records/base.html:309
+msgid "Dashboard"
+msgstr "ড্যাশবোর্ড"
+
+#: records/templates/records/base.html:286
+#: records/templates/records/base.html:314
+msgid "Appointments"
+msgstr "অ্যাপয়েন্টমেন্ট"
+
+#: records/templates/records/base.html:291
+#: records/templates/records/doctor_dashboard.html:98
+msgid "Search Patient"
+msgstr "রোগী খুঁজুন"
+
+#: records/templates/records/base.html:297
+msgid "Manage Conditions"
+msgstr "শর্তাবলী পরিচালনা করুন"
+
+#: records/templates/records/base.html:303
+#: records/templates/records/base.html:325
+msgid "My Profile"
+msgstr "আমার প্রোফাইল"
+
+#: records/templates/records/base.html:319
+msgid "My Records"
+msgstr "আমার রেকর্ড"
+
+#: records/templates/records/base.html:332
+msgid "Logout"
+msgstr "লগ আউট"
+
+#: records/templates/records/doctor_appointments.html:6
+msgid "My Appointments"
+msgstr "আমার অ্যাপয়েন্টমেন্ট"
+
+#: records/templates/records/doctor_appointments.html:7
+msgid "A complete list of all scheduled appointments."
+msgstr "সমস্ত নির্ধারিত অ্যাপয়েন্টমেন্টের একটি সম্পূর্ণ তালিকা।"
+
+#: records/templates/records/doctor_appointments.html:16
+#: records/templates/records/doctor_dashboard.html:29
+#: records/templates/records/doctor_dashboard.html:41
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Patient"
+msgstr "রোগী"
+
+#: records/templates/records/doctor_appointments.html:17
+msgid "Date & Time"
+msgstr "তারিখ ও সময়"
+
+#: records/templates/records/doctor_appointments.html:18
+msgid "Mode"
+msgstr "মোড"
+
+#: records/templates/records/doctor_appointments.html:19
+msgid "Reason"
+msgstr "কারণ"
+
+#: records/templates/records/doctor_appointments.html:20
+msgid "Status"
+msgstr "স্ট্যাটাস"
+
+#: records/templates/records/doctor_appointments.html:21
+msgid "Actions"
+msgstr "ক্রিয়া"
+
+#: records/templates/records/doctor_appointments.html:51
+msgid "Update"
+msgstr "আপডেট করুন"
+
+#: records/templates/records/doctor_appointments.html:57
+msgid "You have no appointments."
+msgstr "আপনার কোন অ্যাপয়েন্টমেন্ট নেই।"
+
+#: records/templates/records/doctor_dashboard.html:6
+#, python-format
+msgid "Welcome, Dr. %(doctor_name)s!"
+msgstr "স্বাগতম, ডাঃ %(doctor_name)s!"
+
+#: records/templates/records/doctor_dashboard.html:9
+msgid "Here is your control center."
+msgstr "এখানে আপনার নিয়ন্ত্রণ কেন্দ্র।"
+
+#: records/templates/records/doctor_dashboard.html:19
+msgid "Add Medical Record"
+msgstr "মেডিকেল রেকর্ড যোগ করুন"
+
+#: records/templates/records/doctor_dashboard.html:20
+#: records/templates/records/doctor_dashboard.html:44
+msgid "Add Condition"
+msgstr "শর্ত যোগ করুন"
+
+#: records/templates/records/doctor_dashboard.html:21
+msgid "View Active Conditions"
+msgstr "সক্রিয় শর্তাবলী দেখুন"
+
+#: records/templates/records/doctor_dashboard.html:34
+msgid "Health Report"
+msgstr "স্বাস্থ্য প্রতিবেদন"
+
+#: records/templates/records/doctor_dashboard.html:42
+msgid "Condition Name"
+msgstr "শর্তের নাম"
+
+#: records/templates/records/doctor_dashboard.html:43
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Start Date"
+msgstr "শুরুর তারিখ"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Condition"
+msgstr "শর্ত"
+
+#: records/templates/records/doctor_dashboard.html:49
+msgid "Action"
+msgstr "ক্রিয়া"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "Edit / Complete"
+msgstr "সম্পাদনা / সম্পূর্ণ"
+
+#: records/templates/records/doctor_dashboard.html:50
+msgid "No active conditions found."
+msgstr "কোন সক্রিয় শর্ত পাওয়া যায়নি।"
+
+#: records/templates/records/doctor_dashboard.html:61
+msgid "Upcoming Appointments"
+msgstr "আসন্ন অ্যাপয়েন্টমেন্ট"
+
+#: records/templates/records/doctor_dashboard.html:62
+msgid "View All"
+msgstr "সব দেখুন"
+
+#: records/templates/records/doctor_dashboard.html:78
+msgid "Scheduled"
+msgstr "নির্ধারিত"
+
+#: records/templates/records/doctor_dashboard.html:79
+#: records/templates/records/patient_dashboard.html:121
+msgid "Completed"
+msgstr "সম্পন্ন"
+
+#: records/templates/records/doctor_dashboard.html:80
+msgid "Pending"
+msgstr "মুলতুবি"
+
+#: records/templates/records/doctor_dashboard.html:81
+msgid "Cancelled"
+msgstr "বাতিল"
+
+#: records/templates/records/doctor_dashboard.html:88
+msgid "No upcoming appointments."
+msgstr "কোন আসন্ন অ্যাপয়েন্টমেন্ট নেই।"
+
+#: records/templates/records/doctor_dashboard.html:99
+msgid "Go to Search Page"
+msgstr "অনুসন্ধান পৃষ্ঠায় যান"
+
+#: records/templates/records/doctor_profile.html:7
+msgid "Doctor Profile"
+msgstr "ডাক্তারের প্রোফাইল"
+
+#: records/templates/records/doctor_profile.html:8
+msgid "Your professional and practice information."
+msgstr "আপনার পেশাদার এবং অনুশীলন তথ্য।"
+
+#: records/templates/records/doctor_profile.html:11
+#: records/templates/records/patient_profile.html:11
+msgid "Edit Profile"
+msgstr "প্রোফাইল সম্পাদনা করুন"
+
+#: records/templates/records/doctor_profile.html:22
+#, python-format
+msgid "Dr. %(doctor.name)s"
+msgstr "ডাঃ %(doctor.name)s"
+
+#: records/templates/records/doctor_profile.html:35
+msgid "Gender"
+msgstr "লিঙ্গ"
+
+#: records/templates/records/doctor_profile.html:38
+#: records/templates/records/edit_patient_profile.html:15
+#: records/templates/records/patient_profile.html:31
+msgid "Date of Birth"
+msgstr "জন্ম তারিখ"
+
+#: records/templates/records/doctor_profile.html:41
+msgid "Phone"
+msgstr "ফোন"
+
+#: records/templates/records/doctor_profile.html:44
+msgid "Email"
+msgstr "ইমেল"
+
+#: records/templates/records/doctor_profile.html:47
+msgid "Experience"
+msgstr "অভিজ্ঞতা"
+
+#: records/templates/records/doctor_profile.html:48
+#, python-format
+msgid "%(doctor.experience)s Years"
+msgstr "%(doctor.experience)s বছর"
+
+#: records/templates/records/doctor_profile.html:50
+msgid "Registration No"
+msgstr "নিবন্ধন নম্বর"
+
+#: records/templates/records/doctor_profile.html:53
+msgid "Current Affiliation"
+msgstr "বর্তমান সংযুক্তি"
+
+#: records/templates/records/doctor_profile.html:59
+msgid "Practice Information"
+msgstr "অনুশীলন তথ্য"
+
+#: records/templates/records/doctor_profile.html:62
+msgid "Clinic Address"
+msgstr "ক্লিনিকের ঠিকানা"
+
+#: records/templates/records/doctor_profile.html:63
+msgid "Consultation Hours"
+msgstr "পরামর্শের সময়"
+
+#: records/templates/records/doctor_profile.html:64
+msgid "Languages Spoken"
+msgstr "কথ্য ভাষা"
+
+#: records/templates/records/doctor_profile.html:65
+msgid "Consultation Modes"
+msgstr "পরামর্শের মোড"
+
+#: records/templates/records/doctor_profile.html:71
+msgid "Qualifications"
+msgstr "যোগ্যতা"
+
+#: records/templates/records/edit_patient_profile.html:5
+msgid "Edit My Profile"
+msgstr "আমার প্রোফাইল সম্পাদনা করুন"
+
+#: records/templates/records/edit_patient_profile.html:6
+msgid "Update your health and personal information."
+msgstr "আপনার স্বাস্থ্য এবং ব্যক্তিগত তথ্য আপডেট করুন।"
+
+#: records/templates/records/edit_patient_profile.html:13
+#: records/templates/records/patient_profile.html:30
+msgid "Personal Details"
+msgstr "ব্যক্তিগত বিবরণ"
+
+#: records/templates/records/edit_patient_profile.html:14
+msgid "Full Name"
+msgstr "পুরো নাম"
+
+#: records/templates/records/edit_patient_profile.html:17
+#: records/templates/records/patient_profile.html:34
+msgid "Health Metrics"
+msgstr "স্বাস্থ্য মেট্রিক্স"
+
+#: records/templates/records/edit_patient_profile.html:18
+#: records/templates/records/patient_onboarding.html:19
+#: records/templates/records/patient_profile.html:35
+msgid "Blood Group"
+msgstr "রক্তের গ্রুপ"
+
+#: records/templates/records/edit_patient_profile.html:19
+msgid "Height (cm)"
+msgstr "উচ্চতা (সেমি)"
+
+#: records/templates/records/edit_patient_profile.html:20
+msgid "Weight (kg)"
+msgstr "ওজন (কেজি)"
+
+#: records/templates/records/edit_patient_profile.html:22
+#: records/templates/records/patient_onboarding.html:33
+#: records/templates/records/patient_profile.html:39
+msgid "Medical History"
+msgstr "চিকিৎসার ইতিহাস"
+
+#: records/templates/records/edit_patient_profile.html:23
+#: records/templates/records/patient_onboarding.html:34
+#: records/templates/records/patient_profile.html:40
+msgid "Allergies"
+msgstr "অ্যালার্জি"
+
+#: records/templates/records/edit_patient_profile.html:24
+#: records/templates/records/patient_onboarding.html:35
+#: records/templates/records/patient_profile.html:41
+msgid "Chronic Diseases"
+msgstr "দীর্ঘস্থায়ী রোগ"
+
+#: records/templates/records/edit_patient_profile.html:26
+msgid "Profile Picture"
+msgstr "প্রোফাইল ছবি"
+
+#: records/templates/records/edit_patient_profile.html:28
+msgid "Upload New Picture"
+msgstr "নতুন ছবি আপলোড করুন"
+
+#: records/templates/records/edit_patient_profile.html:31
+#, python-format
+msgid "Current: %(patient.profile_picture.name)s"
+msgstr "বর্তমান: %(patient.profile_picture.name)s"
+
+#: records/templates/records/edit_patient_profile.html:35
+msgid "Save Changes"
+msgstr "পরিবর্তন সংরক্ষণ করুন"
+
+#: records/templates/records/patient_dashboard.html:62
+#, python-format
+msgid "Welcome, %(patient_name)s!"
+msgstr "স্বাগতম, %(patient_name)s!"
+
+#: records/templates/records/patient_dashboard.html:63
+msgid "Here is your health summary and quick actions."
+msgstr "এখানে আপনার স্বাস্থ্য সারসংক্ষেপ এবং দ্রুত ক্রিয়া রয়েছে।"
+
+#: records/templates/records/patient_dashboard.html:87
+msgid "New Consultation"
+msgstr "নতুন পরামর্শ"
+
+#: records/templates/records/patient_dashboard.html:88
+msgid "Book a new appointment"
+msgstr "একটি নতুন অ্যাপয়েন্টমেন্ট বুক করুন"
+
+#: records/templates/records/patient_dashboard.html:94
+msgid "AI Diet Advisor"
+msgstr "এআই ডায়েট উপদেষ্টা"
+
+#: records/templates/records/patient_dashboard.html:95
+msgid "Get personalized diet tips"
+msgstr "ব্যক্তিগত খাদ্য টিপস পান"
+
+#: records/templates/records/patient_dashboard.html:101
+msgid "Ingredient Scanner"
+msgstr "উপাদান স্ক্যানার"
+
+#: records/templates/records/patient_dashboard.html:102
+msgid "Check product safety"
+msgstr "পণ্যের নিরাপত্তা পরীক্ষা করুন"
+
+#: records/templates/records/patient_dashboard.html:111
+msgid "Your Health Conditions"
+msgstr "আপনার স্বাস্থ্য অবস্থা"
+
+#: records/templates/records/patient_dashboard.html:118
+msgid "Since"
+msgstr "থেকে"
+
+#: records/templates/records/patient_dashboard.html:123
+msgid "Active"
+msgstr "সক্রিয়"
+
+#: records/templates/records/patient_dashboard.html:128
+msgid "You have no health conditions recorded."
+msgstr "আপনার কোন স্বাস্থ্য অবস্থা রেকর্ড করা নেই।"
+
+#: records/templates/records/patient_dashboard.html:138
+msgid "Your Medical History"
+msgstr "আপনার চিকিৎসার ইতিহাস"
+
+#: records/templates/records/patient_dashboard.html:143
+#, python-format
+msgid "Date: %(record_date)s with <strong>Dr. %(doctor_name)s</strong>"
+msgstr "তারিখ: %(record_date)s, <strong>ডাঃ %(doctor_name)s</strong> এর সাথে"
+
+#: records/templates/records/patient_dashboard.html:150
+msgid "You have no medical records found."
+msgstr "আপনার কোন মেডিকেল রেকর্ড পাওয়া যায়নি।"
+
+#: records/templates/records/patient_dashboard.html:159
+msgid "AI Health Assistant"
+msgstr "এআই স্বাস্থ্য সহকারী"
+
+#: records/templates/records/patient_dashboard.html:163
+#, python-format
+msgid "Hello %(patient_name)s, how can I help you today?"
+msgstr "হ্যালো %(patient_name)s, আমি আজ আপনাকে কিভাবে সাহায্য করতে পারি?"
+
+#: records/templates/records/patient_dashboard.html:168
+msgid "Ask your question here..."
+msgstr "আপনার প্রশ্ন এখানে জিজ্ঞাসা করুন..."
+
+#: records/templates/records/patient_dashboard.html:169
+msgid "Send"
+msgstr "পাঠান"
+
+#: records/templates/records/patient_onboarding.html:12
+msgid "Welcome to AyushCare!"
+msgstr "আয়ুশকেয়ারে স্বাগতম!"
+
+#: records/templates/records/patient_onboarding.html:13
+msgid "Let's set up your health profile. (Step 1 of 2)"
+msgstr "চলুন আপনার স্বাস্থ্য প্রোফাইল সেট আপ করি। (ধাপ ১/২)"
+
+#: records/templates/records/patient_onboarding.html:18
+msgid "Basic Information"
+msgstr "মৌলিক তথ্য"
+
+#: records/templates/records/patient_onboarding.html:19
+msgid "e.g., O+"
+msgstr "যেমন, O+"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "Height (in cm)"
+msgstr "উচ্চতা (সেমি)"
+
+#: records/templates/records/patient_onboarding.html:20
+msgid "e.g., 175"
+msgstr "যেমন, 175"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "Weight (in kg)"
+msgstr "ওজন (কেজি)"
+
+#: records/templates/records/patient_onboarding.html:21
+msgid "e.g., 70"
+msgstr "যেমন, 70"
+
+#: records/templates/records/patient_onboarding.html:22
+msgid "Next Step"
+msgstr "পরবর্তী ধাপ"
+
+#: records/templates/records/patient_onboarding.html:27
+msgid "Almost Done!"
+msgstr "প্রায় শেষ!"
+
+#: records/templates/records/patient_onboarding.html:28
+msgid "Just a little more about your medical history. (Step 2 of 2)"
+msgstr "আপনার চিকিৎসার ইতিহাস সম্পর্কে আরও কিছু। (ধাপ ২/২)"
+
+#: records/templates/records/patient_onboarding.html:34
+msgid "e.g., Peanuts, Pollen, Dust"
+msgstr "যেমন, চিনাবাদাম, পরাগ, ধুলো"
+
+#: records/templates/records/patient_onboarding.html:35
+msgid "e.g., Diabetes, Hypertension, Asthma"
+msgstr "যেমন, ডায়াবেটিস, উচ্চ রক্তচাপ, হাঁপানি"
+
+#: records/templates/records/patient_onboarding.html:36
+msgid "Finish & Go to My Profile"
+msgstr "শেষ করুন এবং আমার প্রোফাইলে যান"
+
+#: records/templates/records/patient_profile.html:7
+msgid "My Health Profile"
+msgstr "আমার স্বাস্থ্য প্রোফাইল"
+
+#: records/templates/records/patient_profile.html:8
+msgid "Your complete health and personal information."
+msgstr "আপনার সম্পূর্ণ স্বাস্থ্য এবং ব্যক্তিগত তথ্য।"
+
+#: records/templates/records/patient_profile.html:32
+msgid "Aadhar"
+msgstr "আধার"
+
+#: records/templates/records/patient_profile.html:36
+msgid "Height"
+msgstr "উচ্চতা"
+
+#: records/templates/records/patient_profile.html:36
+#, python-format
+msgid "%(patient.height|default:0)s cm"
+msgstr "%(patient.height|default:0)s সেমি"
+
+#: records/templates/records/patient_profile.html:37
+msgid "Weight"
+msgstr "ওজন"
+
+#: records/templates/records/patient_profile.html:37
+#, python-format
+msgid "%(patient.weight|default:0)s kg"
+msgstr "%(patient.weight|default:0)s কেজি"
+
+#: records/templates/records/patient_profile.html:40
+#: records/templates/records/patient_profile.html:41
+msgid "None specified"
+msgstr "কোনটি নির্দিষ্ট করা নেই"
+
+#: records/templates/records/records.html:31
+msgid "My Complete Medical Records"
+msgstr "আমার সম্পূর্ণ মেডিকেল রেকর্ড"
+
+#: records/templates/records/records.html:32
+msgid "A detailed history of all your consultations."
+msgstr "আপনার সমস্ত পরামর্শের একটি বিস্তারিত ইতিহাস।"
+
+#: records/templates/records/records.html:41
+msgid "Date"
+msgstr "তারিখ"
+
+#: records/templates/records/records.html:42
+msgid "Doctor"
+msgstr "ডাক্তার"
+
+#: records/templates/records/records.html:47
+msgid "Report"
+msgstr "প্রতিবেদন"
+
+#: records/templates/records/records.html:62
+msgid "View"
+msgstr "দেখুন"
+
+#: records/templates/records/records.html:65
+msgid "No File"
+msgstr "কোন ফাইল নেই"
+
+#: records/templates/records/records.html:71
+msgid "You have no medical records yet."
+msgstr "আপনার এখনও কোন মেডিকেল রেকর্ড নেই।"

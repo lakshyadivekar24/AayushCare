@@ -1,0 +1,251 @@
+{% extends 'records/base.html' %}
+{% load i18n %}
+
+{% block styles %}
+<style>
+    .dashboard-header {
+        margin-bottom: 30px;
+    }
+    .dashboard-header h2 {
+        font-weight: 700;
+        color: var(--ayush-primary);
+    }
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    .dashboard-card {
+        background: linear-gradient(135deg, #6e4848, var(--ayush-primary));
+        color: var(--ayush-text-light);
+        padding: 25px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(93, 59, 59, 0.2);
+    }
+    .dashboard-card .icon {
+        font-size: 2rem;
+        margin-right: 20px;
+        width: 50px;
+        text-align: center;
+    }
+    .dashboard-card .card-content h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .dashboard-card .card-content p {
+        margin: 0;
+        opacity: 0.8;
+    }
+    #chat-window {
+        height: 300px;
+        border: 1px solid #eee;
+        overflow-y: scroll;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-header d-flex justify-content-between align-items-center">
+    <div>
+        {% blocktranslate with patient_name=patient.name %}<h2>Welcome, {{ patient_name }}!</h2>{% endblocktranslate %}
+        <p class="text-muted mb-0">{% translate "Here is your health summary and quick actions." %}</p>
+    </div>
+
+    <div style="width: 150px;">
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.get_full_path }}">
+            <select name="language" class="form-select" onchange="this.form.submit()">
+                {% get_current_language as CURRENT_LANGUAGE_CODE %}
+                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                {% for lang_code, lang_name in AVAILABLE_LANGUAGES %}
+                    <option value="{{ lang_code }}" {% if lang_code == CURRENT_LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang_name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+</div>
+
+<div class="dashboard-grid mb-4">
+    <a href="{% url 'book_appointment' %}" class="dashboard-card">
+        <div class="icon"><i class="fas fa-calendar-plus"></i></div>
+        <div class="card-content">
+            <h3>{% translate "New Consultation" %}</h3>
+            <p>{% translate "Book a new appointment" %}</p>
+        </div>
+    </a>
+    <a href="{% url 'diet_advisor' %}" class="dashboard-card">
+        <div class="icon">🌿</div>
+        <div class="card-content">
+            <h3>{% translate "AI Diet Advisor" %}</h3>
+            <p>{% translate "Get personalized diet tips" %}</p>
+        </div>
+    </a>
+    <a href="{% url 'scanner' %}" class="dashboard-card">
+        <div class="icon"><i class="fas fa-barcode"></i></div>
+        <div class="card-content">
+            <h3>{% translate "Ingredient Scanner" %}</h3>
+            <p>{% translate "Check product safety" %}</p>
+        </div>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3><i class="fas fa-heartbeat me-2"></i>{% translate "Your Health Conditions" %}</h3>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tbody>
+                        {% for condition in conditions %}
+                        <tr>
+                            <td><strong>{{ condition.condition_name }}</strong><br><small class="text-muted">{% translate "Since" %}: {{ condition.start_date }}</small></td>
+                            <td class="text-end">
+                                {% if condition.end_date %}
+                                    <span class="badge bg-secondary">{% translate "Completed" %}</span>
+                                {% else %}
+                                    <span class="badge bg-success">{% translate "Active" %}</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td>{% translate "You have no health conditions recorded." %}</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3><i class="fas fa-history me-2"></i>{% translate "Your Medical History" %}</h3>
+            </div>
+            <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                {% for record in records %}
+                    <div class="mb-3">
+                        {% blocktranslate with record_date=record.record_date doctor_name=record.doctor.name %}
+                        <p class="mb-1"><strong>Date:</strong> {{ record_date }} with <strong>Dr. {{ doctor_name }}</strong></p>
+                        {% endblocktranslate %}
+                        <p class="text-muted small"><strong>{% translate "Diagnosis" %}:</strong> {{ record.diagnosis }}</p>
+                    </div>
+                    {% if not forloop.last %}<hr>{% endif %}
+                {% empty %}
+                    <p>{% translate "You have no medical records found." %}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <h3><i class="fas fa-robot me-2"></i>{% translate "AI Health Assistant" %}</h3>
+    </div>
+    <div class="card-body">
+        <div id="chat-window">
+            {% blocktranslate with patient_name=patient.name %}
+            <p><strong>AI:</strong> Hello {{ patient_name }}, how can I help you today?</p>
+            {% endblocktranslate %}
+        </div>
+        <div class="d-flex">
+            <input type="text" id="chat-input" class="form-control me-2" placeholder="{% translate 'Ask your question here...' %}">
+            <button id="send-btn" class="btn btn-primary">{% translate "Send" %}</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Saare zaroori HTML elements ko select karein
+    const chatWindow = document.getElementById('chat-window');
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    // CSRF Token function
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+    // Message bhejne waala main function
+    async function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message === '') return;
+
+        chatWindow.innerHTML += `<p style="text-align: right; margin: 5px; padding: 8px; background-color: #dcf8c6; border-radius: 10px;"><strong>Aap:</strong> ${message}</p>`;
+        chatInput.value = '';
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+
+        chatWindow.innerHTML += `<p id="loading-msg" style="margin: 5px; padding: 8px; background-color: #ececec; border-radius: 10px;"><strong>AI:</strong> Soch raha hoon...</p>`;
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+
+        try {
+            const response = await fetch('/api/chat/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrftoken },
+                body: JSON.stringify({ message: message })
+            });
+
+            if (!response.ok) { throw new Error('Network response was not ok'); }
+            const data = await response.json();
+            
+            // Yahan se map waala logic hata diya gaya hai
+            const aiReply = data.reply.trim().replace('[ADVICE]', '').trim();
+
+            const loadingP = document.getElementById("loading-msg");
+            loadingP.innerHTML = `<strong>AI:</strong> ${aiReply}`;
+            loadingP.removeAttribute("id");
+            
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+
+        } catch (error) {
+            console.error('Error:', error);
+            const loadingP = document.getElementById("loading-msg");
+            if (loadingP) {
+                loadingP.innerHTML = `<strong>AI:</strong> Sorry, ek error aa gaya hai.`;
+                loadingP.removeAttribute("id");
+            }
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+    }
+
+    // Event Listeners
+    if (sendBtn) {
+        sendBtn.addEventListener('click', sendMessage);
+    }
+    if (chatInput) {
+        chatInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+</script>
+{% endblock %}
