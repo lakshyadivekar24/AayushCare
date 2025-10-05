@@ -1,6 +1,6 @@
 <!-- Beautiful Animated Header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:30D5C8,100:04619F&height=200&section=header&text=🏥%20Django%20Hospital%20Management%20System%20🩺&fontSize=30&fontColor=fff&animation=fadeIn&fontAlignY=35" alt="Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:30D5C8,100:04619F&height=200&section=header&text=🏥%20Aayush%20Care🩺&fontSize=30&fontColor=fff&animation=fadeIn&fontAlignY=35" alt="Banner"/>
 </p>
 
 <p align="center">
